@@ -1,1 +1,1 @@
-Denna mapp ska innehålla alla HTML filer som tillhör "kontakter" fliken.
+Denna mapp ska innehålla alla HTML-filer som tillhör "kontakter" fliken.

@@ -1,0 +1,1 @@
+Denna mapp ska innehålla alla JavaScript filer.

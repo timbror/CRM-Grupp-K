@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="sv">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Home</title>
+    <link rel="stylesheet" type="text/css" href="../styles/errands.css">
+</head>
+
+<body>
+
+    <div id="headerBar">
+        <div id="headerLeft">
+            <img src="../images/checkmark.png">
+        </div>
+        <div id="headerCenter">
+            <div>Ärenden</div>
+        </div>
+        <div id="headerRight">
+            <div>
+                <img src="../images/search.png">
+                <img src="../images/plus.png">
+            </div>
+        </div>
+    </div>
+
+
+    <div id="content">
+        <div class="errand">
+            <div class="done">
+                <input name="done" type="checkbox">
+                <label for="done">Klart</label>
+            </div>
+            <div class="name">
+                Förnamn Efternamn
+            </div>
+            <div class="headline">
+                Rubrik
+            </div>
+            <div>
+                Beskrivning
+            </div>
+
+        </div>
+    </div>
+
+    <div id="menuBar">
+        <button id="homeButton">
+            <img src="../images/home.png" alt="house">
+            <div>Hem</div>
+        </button>
+        <button id="errandsButton">
+            <img src="../images/errands.png" alt="checklist">
+            <div>Ärenden</div>
+        </button>
+        <button id="dealsButton">
+            <img src="../images/deals.png" alt="dollar">
+            <div>Affärer</div>
+        </button>
+        <button id="customersButton">
+            <img src="../images/customers.png" alt="face">
+            <div>Kontakter</div>
+        </button>
+        <button id="moreButton">
+            <img src="../images/more.png" alt="hamburger">
+            <div>Mer</div>
+        </button>
+    </div>
+
+    <script src="../scripts/errands.js"></script>
+</body>
+
+</html>

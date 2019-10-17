@@ -58,18 +58,31 @@ class Errands {
     }
 }
 
-new Errands("16 oktober 2019", "KL 11:00", "Gör något");
-new Errands("17 oktober 2019", "KL 12:00", "Gör något");
-new Errands("18 oktober 2019", "KL 13:00", "Gör något");
-new Errands("19 oktober 2019", "KL 14:00", "Gör något");
+//new Errands("16 oktober 2019", "KL 11:00", "Gör något");
+//new Errands("17 oktober 2019", "KL 12:00", "Gör något");
+//new Errands("18 oktober 2019", "KL 13:00", "Gör något");
+//new Errands("19 oktober 2019", "KL 14:00", "Gör något");
 
 document.addEventListener('DOMContentLoaded', (event) => {
     console.log('DOM fully loaded and parsed');
 
-    document.getElementById("addButton").addEventListener("click", function () {
+    document.getElementById("openAddErrand").addEventListener("click", function() {
+        document.getElementById("addErrandPopup").style.display = "block";
+
+    });
+
+    document.getElementById("closeButton").addEventListener("click", function(event) {
+        event.preventDefault();
+        document.getElementById("addErrandPopup").style.display = "none";
+    });
+    
+    document.getElementById("addButton").addEventListener("click", function (event) {
+        event.preventDefault();
+        document.getElementById("addErrandPopup").style.display = "none";
         let errand = new Errands("Datum", "Tid", "Beskrivning");
         console.log(errand);
     });
+    
 
     document.getElementById("searchButton").addEventListener("click", function () {
         console.log("Sök in progress")

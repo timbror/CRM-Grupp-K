@@ -25,6 +25,12 @@ body {
           align-items: center;
 }
 
+#headerBar button {
+  background-color: inherit;
+  border: none;
+  outline: 0;
+}
+
 #content {
   margin-top: 55px;
   margin-bottom: 55px;
@@ -41,6 +47,10 @@ body {
 
 #content .errand .done {
   float: right;
+}
+
+#content .errand .done * {
+  display: block;
 }
 
 #menuBar {

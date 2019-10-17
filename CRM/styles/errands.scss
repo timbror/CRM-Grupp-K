@@ -18,6 +18,12 @@ body {
     display: flex;
     justify-content: space-between;
     align-items: center;
+
+    button {
+        background-color: inherit;
+        border: none;
+        outline: 0;
+    }
 }
 
 #content {
@@ -34,6 +40,10 @@ body {
 
         .done {
             float: right;
+
+            * {
+                display: block;
+            }
         }
     }
 }

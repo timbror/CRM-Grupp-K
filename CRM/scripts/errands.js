@@ -64,7 +64,6 @@ class Errands {
 //new Errands("19 oktober 2019", "KL 14:00", "Gör något");
 
 document.addEventListener('DOMContentLoaded', (event) => {
-    console.log('DOM fully loaded and parsed');
 
     document.getElementById("openAddErrand").addEventListener("click", function() {
         document.getElementById("addErrandPopup").style.display = "block";
@@ -79,17 +78,20 @@ document.addEventListener('DOMContentLoaded', (event) => {
     document.getElementById("addButton").addEventListener("click", function (event) {
         event.preventDefault();
         document.getElementById("addErrandPopup").style.display = "none";
-        let errand = new Errands("Datum", "Tid", "Beskrivning");
+        let errand = new Errands(document.getElementById("date").value, document.getElementById("time").value, document.getElementById("desc").value);
         console.log(errand);
     });
     
 
+    /*
     document.getElementById("searchButton").addEventListener("click", function () {
         console.log("Sök in progress")
     });
+    */
 
+    // Bottom menu bar
     document.getElementById("homeButton").addEventListener("click", function () {
-        console.log("Hem in progress")
+        //console.log("Hem in progress")
     });
     document.getElementById("errandsButton").addEventListener("click", function () {
         console.log("Ärenden in progress...")

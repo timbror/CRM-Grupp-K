@@ -20,9 +20,11 @@
         </div>
         <div id="headerRight">
             <div>
+                <!--
                 <button id="searchButton">
                     <img src="../images/search.png">
                 </button>
+                -->
                 <button id="openAddErrand">
                     <img src="../images/plus.png">
                 </button>
@@ -37,6 +39,21 @@
         <div class="form-popup" id="addErrandPopup">
             <form class="form-container">
                 <h1>Lägg till ärende</h1>
+
+                <label for="date">Datum:</label><br>
+                <input type="date" id="date"><br>
+
+                <label for="time">Tid:</label><br>
+                <input type="time" id="time"><br>
+
+                <!--
+                <label for="errand-title">Titel</label><br>
+                <input type="text" name="errand-title" id="errand-title"><br>
+                -->
+
+                <label for="desc">Beskrivning:</label><br>
+                <textarea id="desc"></textarea><br>
+
                 <button type="submit" class="btn-add" id="addButton">Add</button>
                 <button type="submit" class="btn-cancel" id="closeButton">Close</button>
             </form>
@@ -63,26 +80,40 @@
     </div>
 
     <div id="menuBar">
-        <button id="homeButton">
-            <img src="../images/home.png" alt="house">
-            <div>Hem</div>
-        </button>
-        <button id="errandsButton">
-            <img src="../images/errands.png" alt="checklist">
-            <div>Ärenden</div>
-        </button>
-        <button id="dealsButton">
-            <img src="../images/deals.png" alt="dollar">
-            <div>Affärer</div>
-        </button>
-        <button id="customersButton">
-            <img src="../images/customers.png" alt="face">
-            <div>Kontakter</div>
-        </button>
-        <button id="moreButton">
-            <img src="../images/more.png" alt="hamburger">
-            <div>Mer</div>
-        </button>
+        <a href="../index.html">
+            <button id="homeButton">
+                <img src="../images/home.png" alt="house">
+                <div>Hem</div>
+            </button>
+        </a>
+
+        <a>
+            <button id="errandsButton">
+                <img src="../images/errands.png" alt="checklist">
+                <div>Ärenden</div>
+            </button>
+        </a>
+
+        <a>
+            <button id="dealsButton">
+                <img src="../images/deals.png" alt="dollar">
+                <div>Affärer</div>
+            </button>
+        </a>
+
+        <a>
+            <button id="customersButton">
+                <img src="../images/customers.png" alt="face">
+                <div>Kontakter</div>
+            </button>
+        </a>
+
+        <a>
+            <button id="moreButton">
+                <img src="../images/more.png" alt="hamburger">
+                <div>Mer</div>
+            </button>
+        </a>
     </div>
 
     <script src="../scripts/errands.js"></script>

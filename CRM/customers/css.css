@@ -54,3 +54,21 @@ img {
     border: none;
     outline: 0;
 }
+#phoneButton{
+    border-radius: 10px;
+    background-color: inherit;
+    position: relative;
+    width: 75px;
+    height: 75px;
+    float: left;
+    margin-left:75px;
+    margin-top: 40px;
+}
+#mailButton{
+    border-radius: 10px;
+    background-color: inherit;
+    position: relative;
+    width: 75px;
+    height: 75px;
+    margin-top: 40px;
+}

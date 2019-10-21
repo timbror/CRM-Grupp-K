@@ -3,14 +3,25 @@ class Errands {
         this.date = date;
         this.time = time;
         this.description = description;
-        this.checkboxes = document.getElementsByName("done");
+        //this.checkboxes = document.getElementsByName("done");
         this.createErrand(this.date, this.time, this.description);
-        this.completeErrand();
+        this.openErrandEditor();
+        this.completeErrand(document.getElementsByName("done"));
     }
 
     createErrand(date, time, description) {
         let errandBox = document.createElement("div");
         errandBox.classList = "errand";
+        errandBox.addEventListener("click", function (event) {
+
+            if (event.currentTarget.firstChild.firstChild.checked) {
+                return;
+            }
+            
+
+            document.getElementById("invisible-div").classList.remove("hidden");
+            document.getElementById("editErrandPopup").classList.remove("hidden");
+        });
 
         let errandDate = document.createElement("div");
         errandDate.classList = "date";
@@ -43,18 +54,55 @@ class Errands {
         errandBox.appendChild(errandTime);
         errandBox.appendChild(errandDescription);
 
+
         document.getElementById("content").appendChild(errandBox);
+
+
     }
 
-    completeErrand () {
-        for (let checkbox of this.checkboxes) {
-            checkbox.addEventListener("change", function(event){
+    openErrandEditor() {
+        /*
+        for (let errand of document.getElementsByClassName("errand")) {
+            errand.addEventListener("click", function (event) {
+
+                if (event.currentTarget.firstChild.firstChild.checked) {
+                    return;
+                }
+                
+
+                document.getElementById("invisible-div").classList.remove("hidden");
+                document.getElementById("editErrandPopup").classList.remove("hidden");
+            });
+        }
+        */
+
+        document.getElementById("edit-addButton").addEventListener("click", function (event) {
+            event.preventDefault();
+
+            //console.log(event.currentTarget.parentNode);
+            //event.currentTarget
+            //event.currentTarget.childNodes[1].innerHTML = document.getElementById("edit-date").value;
+            // "edit-date" "edit-time" "edit-desc" */
+
+            document.getElementById("invisible-div").classList.add("hidden");
+            document.getElementById("editErrandPopup").classList.add("hidden");
+        });
+
+        document.getElementById("edit-closeButton").addEventListener("click", function (event) {
+            event.preventDefault();
+            document.getElementById("invisible-div").classList.add("hidden");
+            document.getElementById("editErrandPopup").classList.add("hidden");
+        });
+    }
+
+    completeErrand(checkboxes) {
+        for (let checkbox of checkboxes) {
+            checkbox.addEventListener("change", function (event) {
                 if (checkbox.checked === true) {
-                    console.log("checkad");
                     event.currentTarget.parentNode.parentNode.remove();
                 }
             });
-        } 
+        }
     }
 }
 
@@ -65,23 +113,45 @@ class Errands {
 
 document.addEventListener('DOMContentLoaded', (event) => {
 
-    document.getElementById("openAddErrand").addEventListener("click", function() {
-        document.getElementById("addErrandPopup").style.display = "block";
+    document.getElementById("openAddErrand").addEventListener("click", function () {
 
+        document.getElementById("invisible-div").classList.remove("hidden");
+        document.getElementById("addErrandPopup").classList.remove("hidden");
+
+    });
+
+    document.getElementById("invisible-div").addEventListener("click", closePopup);
+    document.getElementById("closeButton").addEventListener("click", closePopup);
+
+    /*
+    document.getElementById("invisible-div").addEventListener("click", function(event) {
+        event.preventDefault();
+        document.getElementById("addErrandPopup").classList.add("hidden");
+        document.getElementById("invisible-div").classList.add("hidden");
     });
 
     document.getElementById("closeButton").addEventListener("click", function(event) {
         event.preventDefault();
-        document.getElementById("addErrandPopup").style.display = "none";
+        document.getElementById("addErrandPopup").classList.add("hidden");
+        document.getElementById("invisible-div").classList.add("hidden");
     });
-    
+    */
+
     document.getElementById("addButton").addEventListener("click", function (event) {
         event.preventDefault();
-        document.getElementById("addErrandPopup").style.display = "none";
+        document.getElementById("addErrandPopup").classList.add("hidden");
+        document.getElementById("invisible-div").classList.add("hidden");
         let errand = new Errands(document.getElementById("date").value, document.getElementById("time").value, document.getElementById("desc").value);
         console.log(errand);
     });
-    
+
+    function closePopup(event) {
+        event.preventDefault();
+        document.getElementById("addErrandPopup").classList.add("hidden");
+        document.getElementById("invisible-div").classList.add("hidden");
+
+        document.getElementById("editErrandPopup").classList.add("hidden");
+    }
 
     /*
     document.getElementById("searchButton").addEventListener("click", function () {

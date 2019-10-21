@@ -36,7 +36,11 @@
 
 
     <div id="content">
-        <div class="form-popup" id="addErrandPopup">
+        <div id="invisible-div" class="hidden">
+
+        </div>
+
+        <div class="form-popup hidden" id="addErrandPopup">
             <form class="form-container">
                 <h1>Lägg till ärende</h1>
 
@@ -58,6 +62,29 @@
                 <button type="submit" class="btn-cancel" id="closeButton">Close</button>
             </form>
         </div>
+
+        <div class="form-popup hidden" id="editErrandPopup">
+                <form class="form-container">
+                    <h1>Redigera ärende</h1>
+    
+                    <label for="date">Datum:</label><br>
+                    <input type="date" id="edit-date"><br>
+    
+                    <label for="time">Tid:</label><br>
+                    <input type="time" id="edit-time"><br>
+    
+                    <!--
+                    <label for="errand-title">Titel</label><br>
+                    <input type="text" name="errand-title" id="errand-title"><br>
+                    -->
+    
+                    <label for="desc">Beskrivning:</label><br>
+                    <textarea id="edit-desc"></textarea><br>
+    
+                    <button type="submit" class="btn-add" id="edit-addButton">Add</button>
+                    <button type="submit" class="btn-cancel" id="edit-closeButton">Close</button>
+                </form>
+            </div>
 
         <!--
         <div class="errand">

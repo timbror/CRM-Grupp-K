@@ -23,6 +23,7 @@ class Errands {
     createErrand(id, date, time, description) {
         let errandBox = document.createElement("div");
         errandBox.classList = "errand";
+        errandBox.id = id;
 
         let errandDate = document.createElement("div");
         errandDate.classList = "date";
@@ -35,10 +36,6 @@ class Errands {
         let errandDescription = document.createElement("div");
         errandDescription.classList = "description";
         errandDescription.innerHTML = description;
-
-        let idContainer = document.createElement("div");
-        idContainer.classList.add("hidden");
-        idContainer.innerHTML = id;
 
         let done = document.createElement("div");
         done.classList = "done";
@@ -58,7 +55,6 @@ class Errands {
         errandBox.appendChild(errandDate);
         errandBox.appendChild(errandTime);
         errandBox.appendChild(errandDescription);
-        errandBox.appendChild(idContainer);
 
         document.getElementById("content").appendChild(errandBox);
     }
@@ -79,7 +75,7 @@ class Errands {
                 document.getElementById("edit-date").value = event.currentTarget.getElementsByTagName("div")[1].innerHTML;
                 document.getElementById("edit-time").value = event.currentTarget.getElementsByTagName("div")[2].innerHTML;
                 document.getElementById("edit-desc").value = event.currentTarget.getElementsByTagName("div")[3].innerHTML;
-                globalThis.clickedErrandId = event.currentTarget.getElementsByTagName("div")[4].innerHTML;
+                globalThis.clickedErrandId = event.currentTarget.id;
 
                 document.getElementById("popup-background").classList.remove("hidden");
                 document.getElementById("editErrandPopup").classList.remove("hidden");
@@ -92,7 +88,7 @@ class Errands {
 
             for (let errand of document.getElementsByClassName("errand")) {
 
-                if (errand.getElementsByTagName("div")[4].innerHTML == globalThis.clickedErrandId) {
+                if (errand.id == globalThis.clickedErrandId) {
                     errand.getElementsByTagName("div")[1].innerHTML = document.getElementById("edit-date").value;
                     errand.getElementsByTagName("div")[2].innerHTML = document.getElementById("edit-time").value;
                     errand.getElementsByTagName("div")[3].innerHTML = document.getElementById("edit-desc").value;

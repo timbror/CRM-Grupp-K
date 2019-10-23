@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="sv">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Ärenden</title>
+    <link rel="stylesheet" type="text/css" href="../styles/errands.css">
+</head>
+
+<body>
+
+    <!--Top navigation bar-->
+    <div id="headerBar">
+        <div id="headerLeft">
+            <img src="../images/checkmark.png">
+        </div>
+
+        <div id="headerCenter">
+            <div>Ärenden</div>
+        </div>
+        
+        <div id="headerRight">
+            <div>
+                <button id="openAddErrand">
+                    <img src="../images/plus.png">
+                </button>
+            </div>
+        </div>
+    </div> <!--End of headerBar-->
+
+    <!--All content here-->
+    <div id="content">
+
+        <!--Background for the popup windows-->
+        <div id="popup-background" class="hidden"></div>
+
+        <!--Add errand popup-->
+        <div class="form-popup hidden" id="addErrandPopup">
+            <form class="form-container">
+                <h1>Lägg till ärende</h1>
+
+                <label for="date">Datum:</label><br>
+                <input type="date" id="date"><br>
+
+                <label for="time">Tid:</label><br>
+                <input type="time" id="time"><br>
+
+                <label for="desc">Beskrivning:</label><br>
+                <textarea id="desc"></textarea><br>
+
+                <button type="submit" class="btn-add" id="addButton">Lägg Till</button>
+                <button type="submit" class="btn-cancel" id="closeButton">Avbryt</button>
+            </form>
+        </div>
+
+        <!--Edit errand popup-->
+        <div class="form-popup hidden" id="editErrandPopup">
+            <form class="form-container">
+                <h1>Redigera ärende</h1>
+
+                <label for="edit-date">Datum:</label><br>
+                <input type="date" id="edit-date"><br>
+
+                <label for="edit-time">Tid:</label><br>
+                <input type="time" id="edit-time"><br>
+
+                <label for="edit-desc">Beskrivning:</label><br>
+                <textarea id="edit-desc"></textarea><br>
+
+                <button type="submit" class="btn-add" id="edit-addButton">Spara</button>
+                <button type="submit" class="btn-cancel" id="edit-closeButton">Avbryt</button>
+            </form>
+        </div>
+    </div> <!--End of content-->
+
+    <!--Bottom menu bar-->
+    <div id="menuBar">
+        <a href="../index.html">
+            <button id="homeButton">
+                <img src="../images/home.png" alt="house">
+                <div>Hem</div>
+            </button>
+        </a>
+
+        <a>
+            <button id="errandsButton">
+                <img src="../images/errands.png" alt="checklist">
+                <div>Ärenden</div>
+            </button>
+        </a>
+
+        <a>
+            <button id="dealsButton">
+                <img src="../images/deals.png" alt="dollar">
+                <div>Affärer</div>
+            </button>
+        </a>
+
+        <a>
+            <button id="customersButton">
+                <img src="../images/customers.png" alt="face">
+                <div>Kontakter</div>
+            </button>
+        </a>
+
+        <a>
+            <button id="moreButton">
+                <img src="../images/more.png" alt="hamburger">
+                <div>Mer</div>
+            </button>
+        </a>
+    </div> <!--End of menuBar-->
+
+    <script src="../scripts/errands.js"></script>
+</body>
+
+</html>

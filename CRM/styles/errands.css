@@ -89,7 +89,7 @@ img {
   height: auto;
 }
 
-#invisible-div {
+#popup-background {
   position: fixed;
   background-color: lightgray;
   opacity: 0.5;
@@ -111,6 +111,12 @@ img {
   border: 2px solid #4B820B;
   border-radius: 3px;
   z-index: 9;
+}
+
+.form-popup button {
+  background-color: #C6EE98;
+  border: 1px solid #4B820B;
+  border-radius: 5px;
 }
 
 .hidden {

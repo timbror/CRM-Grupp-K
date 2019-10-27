@@ -18,9 +18,12 @@
         </div>
 
         <div id="headerCenter">
-            <div>Ärenden</div>
+            <div>
+                <button id="showErrands" class="selected">Ärenden</button>
+                <button id="showArchive">Arkiv</button>
+            </div>
         </div>
-        
+
         <div id="headerRight">
             <div>
                 <button id="openAddErrand">
@@ -28,7 +31,8 @@
                 </button>
             </div>
         </div>
-    </div> <!--End of headerBar-->
+    </div>
+    <!--End of headerBar-->
 
     <!--All content here-->
     <div id="content">
@@ -73,7 +77,16 @@
                 <button type="submit" class="btn-cancel" id="edit-closeButton">Avbryt</button>
             </form>
         </div>
-    </div> <!--End of content-->
+
+        <div id="errandContainer">
+
+        </div>
+
+        <div id="errandArchive" class="hidden">
+
+        </div>
+    </div>
+    <!--End of content-->
 
     <!--Bottom menu bar-->
     <div id="menuBar">
@@ -84,7 +97,7 @@
             </button>
         </a>
 
-        <a>
+        <a class="selected">
             <button id="errandsButton">
                 <img src="../images/errands.png" alt="checklist">
                 <div>Ärenden</div>
@@ -111,7 +124,8 @@
                 <div>Mer</div>
             </button>
         </a>
-    </div> <!--End of menuBar-->
+    </div>
+    <!--End of menuBar-->
 
     <script src="../scripts/errands.js"></script>
 </body>

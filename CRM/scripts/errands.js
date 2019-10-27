@@ -1,9 +1,40 @@
-/*This class will sort errands etc. Work in progress*/
+/*Class for sorting and printing errands*/
 class ErrandManegement {
     constructor() {
         this.errandId = 0;
         this.activeErrands = [];
         this.archivedErrands = [];
+        
+    }
+
+    /*Sorts errands by time and date*/
+    sortAndPrint() {
+        /*Resets the errand container*/
+        document.getElementById("errandContainer").innerHTML = "";
+
+        /*Sorts errand by time*/
+        this.activeErrands.sort(function(a, b){
+            return Number(a.getElementsByTagName("div")[2].innerHTML.replace(/[^0-9]/g,'')) - Number(b.getElementsByTagName("div")[2].innerHTML.replace(/[^0-9]/g,''));  
+        });
+
+        /*Sorts errand by date*/
+        this.activeErrands.sort(function(a, b){
+            return Number(a.getElementsByTagName("div")[1].innerHTML.replace(/[^0-9]/g,'')) - Number(b.getElementsByTagName("div")[1].innerHTML.replace(/[^0-9]/g,''));  
+        });
+
+        /*Apends errand to the errand container*/
+        for(let errand of this.activeErrands) {
+            document.getElementById("errandContainer").appendChild(errand);
+        }
+    }
+
+    /*Prints out errands in the archive*/
+    printArchive() {
+        document.getElementById("errandArchive").innerHTML = "";
+
+        for(let errand of this.archivedErrands) {
+            document.getElementById("errandArchive").appendChild(errand);
+        }
     }
 }
 
@@ -16,10 +47,10 @@ class Errands {
         this.description = description;
         this.createErrand(this.IdNumber, this.date, this.time, this.description);
         this.errandEditor();
-        this.completeErrand(document.getElementsByName("done"));
+        currentSession.errandId++;
     }
 
-    /*Creates and appends all DOM elements associated with the errands*/
+    /*Creates the errand and adds it to activeErrands array*/
     createErrand(id, date, time, description) {
         let errandBox = document.createElement("div");
         errandBox.classList = "errand";
@@ -43,12 +74,12 @@ class Errands {
         let checkbox = document.createElement("input");
         checkbox.setAttribute("type", "checkbox");
         checkbox.setAttribute("name", "done");
+        checkbox.addEventListener("change", this.completeErrand);
 
         let label = document.createElement("label");
-        label.setAttribute("for", "done");
         label.innerHTML = "Klart";
 
-        done.appendChild(checkbox);
+        label.appendChild(checkbox);
         done.appendChild(label);
 
         errandBox.appendChild(done);
@@ -56,7 +87,8 @@ class Errands {
         errandBox.appendChild(errandTime);
         errandBox.appendChild(errandDescription);
 
-        document.getElementById("content").appendChild(errandBox);
+        currentSession.activeErrands.push(errandBox);
+        currentSession.sortAndPrint();
     }
 
     /*Lets the user edit existing errands*/
@@ -68,7 +100,7 @@ class Errands {
             errand.addEventListener("click", function (event) {
 
                 /*This if statement prevents opening the edit popup when the "done" checkbox is checked*/
-                if (event.currentTarget.firstChild.firstChild.checked) {
+                if (event.currentTarget.firstChild.firstChild.lastChild.checked) {
                     return;
                 }
 
@@ -87,7 +119,6 @@ class Errands {
             event.preventDefault();
 
             for (let errand of document.getElementsByClassName("errand")) {
-
                 if (errand.id == globalThis.clickedErrandId) {
                     errand.getElementsByTagName("div")[1].innerHTML = document.getElementById("edit-date").value;
                     errand.getElementsByTagName("div")[2].innerHTML = document.getElementById("edit-time").value;
@@ -97,6 +128,7 @@ class Errands {
 
             document.getElementById("popup-background").classList.add("hidden");
             document.getElementById("editErrandPopup").classList.add("hidden");
+            currentSession.sortAndPrint();
         });
 
         /*Closes the popup without making any changes*/
@@ -107,22 +139,25 @@ class Errands {
         });
     }
 
-    /*Removes errand when "klar" checkbox is checked.*/
-    /*Will be moved to archive in the future (work in progress)*/
-    completeErrand(checkboxes) {
-        for (let checkbox of checkboxes) {
-            checkbox.addEventListener("change", function (event) {
-                if (checkbox.checked === true) {
-                    event.currentTarget.parentNode.parentNode.remove();
-                }
-            });
-        }
+    /*Moves errand to the archive*/
+    completeErrand(event) {
+        event.currentTarget.disabled = true;
+        currentSession.archivedErrands.unshift(event.currentTarget.parentNode.parentNode.parentNode);
+        let idx = currentSession.activeErrands.indexOf(event.currentTarget.parentNode.parentNode.parentNode);
+        currentSession.activeErrands.splice(idx, 1);
+        event.currentTarget.parentNode.parentNode.parentNode.remove();
     }
 }
 
 document.addEventListener('DOMContentLoaded', (event) => {
 
-    let currentSession = new ErrandManegement();
+    currentSession = new ErrandManegement();
+
+    new Errands(currentSession.errandId, "2019-10-25", "12:30", "Gör något");
+    new Errands(currentSession.errandId, "2019-10-25", "11:30", "Gör något");
+    new Errands(currentSession.errandId, "2019-10-25", "13:30", "Gör något");
+    new Errands(currentSession.errandId, "2019-10-26", "15:30", "Gör något");
+    new Errands(currentSession.errandId, "2019-10-26", "14:30", "Gör något");
 
     /*Opens the "add errand" popup window*/
     document.getElementById("openAddErrand").addEventListener("click", function () {
@@ -141,9 +176,7 @@ document.addEventListener('DOMContentLoaded', (event) => {
         event.preventDefault();
         document.getElementById("addErrandPopup").classList.add("hidden");
         document.getElementById("popup-background").classList.add("hidden");
-        let errand = new Errands(currentSession.errandId, document.getElementById("date").value, document.getElementById("time").value, document.getElementById("desc").value);
-        currentSession.errandId++;
-        currentSession.activeErrands.push(errand);
+        new Errands(currentSession.errandId, document.getElementById("date").value, document.getElementById("time").value, document.getElementById("desc").value);
     });
 
     /*Closes all popup windows*/
@@ -154,20 +187,20 @@ document.addEventListener('DOMContentLoaded', (event) => {
         document.getElementById("editErrandPopup").classList.add("hidden");
     }
 
-    /*Bottom menu bar. Might not be necessary (links in html)*/
-    document.getElementById("homeButton").addEventListener("click", function () {
-        console.log("Hem in progress...");
+    /*Displays active errands*/
+    document.getElementById("showErrands").addEventListener("click", function(event) {
+        event.currentTarget.classList.add("selected");
+        document.getElementById("showArchive").classList.remove("selected");
+        document.getElementById("errandArchive").classList.add("hidden");
+        document.getElementById("errandContainer").classList.remove("hidden");
     });
-    document.getElementById("errandsButton").addEventListener("click", function () {
-        console.log("Ärenden in progress...");
-    });
-    document.getElementById("dealsButton").addEventListener("click", function () {
-        console.log("Affärer in progress...");
-    });
-    document.getElementById("customersButton").addEventListener("click", function () {
-        console.log("Kontakter in progress..");
-    });
-    document.getElementById("moreButton").addEventListener("click", function () {
-        console.log("Mer in progress...");
+
+    /*Displays errands archive*/
+    document.getElementById("showArchive").addEventListener("click", function(event) {
+        event.currentTarget.classList.add("selected");
+        document.getElementById("showErrands").classList.remove("selected");
+        currentSession.printArchive();
+        document.getElementById("errandContainer").classList.add("hidden");
+        document.getElementById("errandArchive").classList.remove("hidden");
     });
 });

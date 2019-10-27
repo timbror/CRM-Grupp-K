@@ -3,6 +3,7 @@
 }
 
 body {
+    background-color: #C6EE98;
     padding: 0;
     margin: 0;
 }
@@ -14,6 +15,7 @@ body {
     height: 55px;
     width: 100%;
     background-color: #84BF40;
+    border-bottom: 1px solid #4B820B;
 
     display: flex;
     justify-content: space-between;
@@ -34,15 +36,25 @@ body {
     height: 55px;
     width: 100%;
     background-color: #84BF40;
+    border-top: 1px solid #4B820B;
 
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
 
-    button {
-        background-color: inherit;
-        border: none;
-        outline: 0;
+    a {
+        justify-self: center;
+        height: 100%;
+        width: 100%;
+        
+        margin: 0;
+        button {
+            background-color: inherit;
+            border: none;
+            outline: 0;
+            height: 100%;
+            width: 100%;
+            margin: 0;
+        }
     }
 }
 

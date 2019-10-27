@@ -3,6 +3,7 @@
 }
 
 body {
+  background-color: #C6EE98;
   padding: 0;
   margin: 0;
 }
@@ -14,15 +15,15 @@ body {
   height: 55px;
   width: 100%;
   background-color: #84BF40;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
+  border-bottom: 1px solid #4B820B;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 10% 1fr 10%;
+      grid-template-columns: 10% 1fr 10%;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  justify-items: center;
 }
 
 #headerBar button {
@@ -34,8 +35,16 @@ body {
 #headerBar #headerCenter button {
   width: 70px;
   float: left;
-  border: 1px solid black;
+  border: 1px solid #4B820B;
   padding: 3px;
+}
+
+#headerBar #headerCenter #showErrands {
+  border-radius: 3px 0 0 3px;
+}
+
+#headerBar #headerCenter #showArchive {
+  border-radius: 0 3px 3px 0;
 }
 
 #content {
@@ -48,11 +57,12 @@ body {
 
 #content .errand {
   min-height: 50px;
-  margin: 5px;
+  margin-top: 5px;
+  margin-bottom: 5px;
   padding: 5px;
-  border: 2px solid #4B820B;
-  border-radius: 4px;
-  background-color: #68A423;
+  padding-left: 2%;
+  padding-right: 2%;
+  background-color: #84BF40;
 }
 
 #content .errand .description {
@@ -60,12 +70,19 @@ body {
 }
 
 #content .errand .done {
+  height: 50px;
   float: right;
   z-index: 7;
+  display: -ms-grid;
+  display: grid;
 }
 
 #content .errand .done * {
-  display: block;
+  -ms-grid-column-align: center;
+      justify-self: center;
+  -ms-flex-item-align: end;
+      -ms-grid-row-align: end;
+      align-self: end;
 }
 
 #menuBar {
@@ -75,20 +92,28 @@ body {
   height: 55px;
   width: 100%;
   background-color: #84BF40;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -ms-flex-pack: distribute;
-      justify-content: space-around;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  border-top: 1px solid #4B820B;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: (1fr)[5];
+      grid-template-columns: repeat(5, 1fr);
 }
 
-#menuBar button {
+#menuBar a {
+  -ms-grid-column-align: center;
+      justify-self: center;
+  height: 100%;
+  width: 100%;
+  margin: 0;
+}
+
+#menuBar a button {
   background-color: inherit;
   border: none;
   outline: 0;
+  height: 100%;
+  width: 100%;
+  margin: 0;
 }
 
 img {
@@ -108,19 +133,24 @@ img {
 }
 
 .form-popup {
-  background-color: #68A423;
+  background-color: #84BF40;
   position: fixed;
   top: 25%;
   left: 10px;
   right: 10px;
   height: 40%;
   padding: 5px;
-  border: 2px solid #4B820B;
+  border: 1px solid #4B820B;
   border-radius: 3px;
   z-index: 9;
 }
 
+.form-popup * {
+  display: block;
+}
+
 .form-popup button {
+  display: inline-block;
   background-color: #C6EE98;
   border: 1px solid #4B820B;
   border-radius: 5px;
@@ -131,6 +161,6 @@ img {
 }
 
 .hidden {
-  display: none;
+  display: none !important;
 }
 /*# sourceMappingURL=errands.css.map */

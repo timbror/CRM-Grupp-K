@@ -56,11 +56,11 @@ body {
 }
 
 img {
-    width: 30px;
-    height: auto;
+  width: 30px;
+  height: auto;
 }
-#backButton{
-    background-color: inherit;
-    border: none;
-    outline: 0;
+
+.selected {
+  background-color: #4B820B !important;
 }
+/*# sourceMappingURL=main.css.map */

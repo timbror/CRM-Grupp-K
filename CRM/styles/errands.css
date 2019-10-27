@@ -31,6 +31,13 @@ body {
   outline: 0;
 }
 
+#headerBar #headerCenter button {
+  width: 70px;
+  float: left;
+  border: 1px solid black;
+  padding: 3px;
+}
+
 #content {
   margin-top: 55px;
   margin-bottom: 55px;
@@ -117,6 +124,10 @@ img {
   background-color: #C6EE98;
   border: 1px solid #4B820B;
   border-radius: 5px;
+}
+
+.selected {
+  background-color: #4B820B !important;
 }
 
 .hidden {

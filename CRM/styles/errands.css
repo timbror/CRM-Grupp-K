@@ -3,7 +3,6 @@
 }
 
 body {
-  background-color: #C6EE98;
   padding: 0;
   margin: 0;
 }
@@ -14,8 +13,8 @@ body {
   left: 0;
   height: 55px;
   width: 100%;
-  background-color: #84BF40;
-  border-bottom: 1px solid #4B820B;
+  background-color: white;
+  border-bottom: 1px solid #c5c5c5;
   display: -ms-grid;
   display: grid;
   -ms-grid-columns: 10% 1fr 10%;
@@ -35,8 +34,9 @@ body {
 #headerBar #headerCenter button {
   width: 70px;
   float: left;
-  border: 1px solid #4B820B;
+  border: 1px solid #84BF40;
   padding: 3px;
+  font-size: 16px;
 }
 
 #headerBar #headerCenter #showErrands {
@@ -52,6 +52,8 @@ body {
   margin-bottom: 55px;
   width: 100%;
   height: 100%;
+  box-sizing: border-box;
+  padding: 5px;
   overflow: auto;
 }
 
@@ -62,7 +64,9 @@ body {
   padding: 5px;
   padding-left: 2%;
   padding-right: 2%;
-  background-color: #84BF40;
+  background: #84BF40;
+  color: white;
+  border-radius: 4px;
 }
 
 #content .errand .description {
@@ -91,8 +95,8 @@ body {
   left: 0;
   height: 55px;
   width: 100%;
-  background-color: #84BF40;
-  border-top: 1px solid #4B820B;
+  background-color: #dbdbdb;
+  border-bottom: 1px solid #c5c5c5;
   display: -ms-grid;
   display: grid;
   -ms-grid-columns: (1fr)[5];
@@ -140,7 +144,7 @@ img {
   right: 10px;
   height: 40%;
   padding: 5px;
-  border: 1px solid #4B820B;
+  border: 1px solid #84BF40;
   border-radius: 3px;
   z-index: 9;
 }
@@ -152,12 +156,13 @@ img {
 .form-popup button {
   display: inline-block;
   background-color: #C6EE98;
-  border: 1px solid #4B820B;
+  border: 1px solid #84BF40;
   border-radius: 5px;
 }
 
 .selected {
-  background-color: #4B820B !important;
+  background-color: #84BF40 !important;
+  color: white;
 }
 
 .hidden {

@@ -17,8 +17,7 @@
             <img src="../images/arrow.png" alt="checklist">
         </button>
         </div>
-        <div id="headerCenter">
-            <div>KundNamn</div>
+        <div id="customername">
         </div>
         <div id="headerRight">
             <div></div>
@@ -28,30 +27,38 @@
 
     <div id="content">
        <center>
-        <div id="phone">
+        <div id="phone" class="knapp">
                 <button id="phoneButton">
                 <img src="../images/Phone.png" alt="phone">
                 </button>
         </div>
         <div id="mail">
-            <button id="mailButton">
+            <button id="mailButton" class="knapp">
                 <img src="../images/mail.png" alt="mail">
+                <a class="link" href="mailto:name@email.com"></a>
             </button>
-        </div>        
-        <div id="Notes">
-            <p>Anteckningar:</p>
-            <textarea rows="4" cols="45">
-            </textarea>
-            <button type="submit">Submit</button>
-        </div>   
-        <div id="Ongoing">
-            <p>Pågående ärenden:</p>
-            <input>
-        </div>
-        <div id="Business">
-            <p>Affärer:</p>
-            <input>
-        </div>        
+        </div>         
+        </center>
+    </div>
+    <div>
+        <center>
+            <form class="inputs" onsubmit="addNoteToCustomer(1); return false;">
+                <p id="notes">Anteckningar:</p>
+                <textarea rows="4" cols="45" id="notesubmit"></textarea><br>
+                <button type="submit">Submit</button>
+            </form>   
+            <div id="businessValue" class="center">
+                <p>Business value:</p>
+            </div>
+            <div id="lastContact" class="center">
+                <p>Last contact</p>
+            </div>  
+            <div id="nextContact" class="center">
+                <p>Next contact</p>
+            </div>
+            <div id="ongoingEvents" class="center">
+                <p>Ongoing Events</p>
+            </div>  
         </center>
     </div>
 
@@ -78,7 +85,7 @@
         </button>
     </div>
 
-    <script src="../scripts/main.js"></script>
+    <script src="kund.js"></script>
 </body>
 
 </html>

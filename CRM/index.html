@@ -13,18 +13,27 @@
 
     <div id="headerBar">
         <div id="headerLeft">
-            <div>Left</div>
+            <div></div>
         </div>
         <div id="headerCenter">
             <div>Hem</div>
+            <div id="todayDate"></div>
         </div>
         <div id="headerRight">
-            <div>Right</div>
+            <div></div>
         </div>
     </div>
 
 
     <div id="content">
+        <button id="mailButton">
+            <img src="images/mail.png">
+        </button>
+        <div id="imgText">Inkorg</div>
+        <div id="errandText">Dagens ärenden:</div>
+        <div class="todayErrands" id="errandOne"></div>
+        <div class="todayErrands" id="errandTwo"></div>
+        <div class="todayErrands" id="errandThree"></div>
 
     </div>
 
@@ -43,7 +52,7 @@
             </button>
         </a>
 
-        <a>
+        <a href="deals/index.html">
             <button id="dealsButton">
                 <img src="images/deals.png" alt="dollar">
                 <div>Affärer</div>

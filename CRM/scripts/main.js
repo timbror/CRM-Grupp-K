@@ -1,5 +1,14 @@
-document.getElementById("homeButton").addEventListener("click", function(){console.log("Hem in progress")});
-document.getElementById("errandsButton").addEventListener("click", function(){console.log("Ärenden in progress...")});
-document.getElementById("dealsButton").addEventListener("click", function(){console.log("Affärer in progress...")});
-document.getElementById("customersButton").addEventListener("click", function(){console.log("Kontakter in progress..")});
-document.getElementById("moreButton").addEventListener("click", function(){console.log("Mer in progress...")});
+document.addEventListener('DOMContentLoaded', (event) => {
+    let options = {
+        weekday: 'long',
+        year: 'numeric',
+        month: 'long',
+        day: 'numeric'
+    };
+    let today = new Date().toLocaleDateString('sv', options);
+    document.getElementById("todayDate").innerHTML = today;
+
+    document.getElementById("mailButton").addEventListener("click", function(){
+        console.log("mail in progress");
+    });
+});

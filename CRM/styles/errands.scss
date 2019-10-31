@@ -1,38 +1,23 @@
+@import "./main.scss";
+
 * {
     font-family: Helvetica, Arial, sans-serif;
 }
 
 body {
-    background-color: #C6EE98;
+
     padding: 0;
     margin: 0;
+    color: var(--h1dark);
 }
 
-#headerBar {
-    position: fixed;
-    top: 0;
-    left: 0;
-    height: 55px;
-    width: 100%;
-    background-color: #84BF40;
-    border-bottom: 1px solid #4B820B;
 
-    display: grid;
-    grid-template-columns: 10% 1fr 10%;
-    align-items: center;
-    justify-items: center;
-
-    button {
-        background-color: inherit;
-        border: none;
-        outline: 0;
-    }
 
     #headerCenter {
         button {
             width: 70px;
             float: left;
-            border: 1px solid #4B820B;
+            border: var(--border);
             padding: 3px;
         }
 
@@ -44,7 +29,7 @@ body {
             border-radius: 0 3px 3px 0;
         }
     }
-}
+
 
 #content {
     margin-top: 55px;
@@ -54,19 +39,28 @@ body {
     overflow: auto;
 
     .errand {
+        @extend %box;
         min-height: 50px;
-        margin-top: 5px;
-        margin-bottom: 5px;
-        padding: 5px;
+        margin: 5px; 
+        padding-top: 15px;
         padding-left: 2%;
         padding-right: 2%;
-        background-color: #84BF40;
 
         .description {
             word-wrap: break-word;
+            margin-left: 20px;
+        }
+
+        .time {
+            margin-left: 20px;
+        }
+
+        .date {
+            margin-left: 20px;
         }
 
         .done {
+            margin-right: 20px;
             height: 50px;
             float: right;
             z-index: 7;
@@ -78,40 +72,6 @@ body {
             }
         }
     }
-}
-
-#menuBar {
-    position: fixed;
-    bottom: 0;
-    left: 0;
-    height: 55px;
-    width: 100%;
-    background-color: #84BF40;
-    border-top: 1px solid #4B820B;
-
-    display: grid;
-    grid-template-columns: repeat(5, 1fr);
-
-    a {
-        justify-self: center;
-        height: 100%;
-        width: 100%;
-        margin: 0;
-
-        button {
-            background-color: inherit;
-            border: none;
-            outline: 0;
-            height: 100%;
-            width: 100%;
-            margin: 0;
-        }
-    }
-}
-
-img {
-    width: 30px;
-    height: auto;
 }
 
 #popup-background {
@@ -147,10 +107,6 @@ img {
         border: 1px solid #4B820B;
         border-radius: 5px;
     }
-}
-
-.selected {
-    background-color: #4B820B !important;
 }
 
 .hidden {

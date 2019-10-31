@@ -1,0 +1,81 @@
+* {
+  font-family: Helvetica, Arial, sans-serif;
+}
+
+html {
+  --bg: #1d201d;
+  --box-bg: linear-gradient(135deg, #11d663, #11d69b);
+  --selected-color: #4b5c4bf5;
+  --border: 1px solid gray;
+  --filter: brightness(90%);
+  --box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
+  --h1: rgb(184, 184, 184);
+  --h1dark: rgb(36, 36, 36);
+}
+
+body {
+  background-color: var(--bg);
+  padding: 0;
+  margin: 0;
+}
+
+#headerBar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 55px;
+  width: 100%;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 15% 1fr 15%;
+      grid-template-columns: 15% 1fr 15%;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  justify-items: center;
+  color: var(--h1);
+}
+
+#menuBar {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  height: 55px;
+  width: 100%;
+  background-color: var(--bg);
+  border-top: var(--border);
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: (1fr)[5];
+      grid-template-columns: repeat(5, 1fr);
+}
+
+#menuBar a {
+  -ms-grid-column-align: center;
+      justify-self: center;
+  height: 100%;
+  width: 100%;
+  margin: 0;
+}
+
+#menuBar a button {
+  background-color: inherit;
+  border: none;
+  outline: 0;
+  height: 100%;
+  width: 100%;
+  margin: 0;
+}
+
+img {
+  width: 30px;
+  height: auto;
+  -webkit-filter: invert(100%);
+          filter: invert(100%);
+}
+
+.selected {
+  background-color: var(--selected-color) !important;
+  color: white !important;
+}
+/*# sourceMappingURL=main.css.map */

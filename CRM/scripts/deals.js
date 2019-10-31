@@ -1,5 +1,6 @@
 document.addEventListener("DOMContentLoaded", function(e){
     document.getElementById("plus").addEventListener("click", newBusiness);
+    document.getElementById("cancel").addEventListener("click", cancel);
     
     let api = getJSON('http://5daef40cf2946f001481d046.mockapi.io/user');
 
@@ -30,6 +31,10 @@ document.addEventListener("DOMContentLoaded", function(e){
         }
 
         document.querySelector(".addBusiness").classList.add("visible");
+    }
+
+    function cancel () {
+        document.querySelector(".addBusiness").classList.remove("visible");
     }
 
     addBusiness();

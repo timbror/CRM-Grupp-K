@@ -2,28 +2,7 @@
     font-family: Helvetica, Arial, sans-serif;
 }
 
-html {
-  --bg: #1d201d;
-  --box-bg: linear-gradient(135deg, #11d663, #11d69b);
-  --selected-color: #4b5c4bf5;
-  --border: 1px solid gray;
-  --filter: brightness(90%);
-  --box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
-  --h1: rgb(184, 184, 184);
-  --h1dark: rgb(36, 36, 36);;
-}
-
-
-%box {
-    border-radius: 25px;
-    max-width: 100vw;
-    height: 10vh;
-    grid-column: span;
-    background: var(--box-bg);
-    margin-bottom: 5px;
-    margin-top: 5px;
-    box-shadow: var(--box-shadow);
-}
+@import "./variables.scss";
 
 body {
     background-color: var(--bg);

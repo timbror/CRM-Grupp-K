@@ -13,6 +13,18 @@ html {
   --h1dark: rgb(36, 36, 36);
 }
 
+.business {
+  border-radius: 25px;
+  max-width: 100vw;
+  height: 10vh;
+  grid-column: span;
+  background: var(--box-bg);
+  margin-bottom: 5px;
+  margin-top: 5px;
+  -webkit-box-shadow: var(--box-shadow);
+          box-shadow: var(--box-shadow);
+}
+
 body {
   background-color: var(--bg);
   padding: 0;
@@ -76,6 +88,43 @@ img {
 
 .selected {
   background-color: var(--selected-color) !important;
-  color: white !important;
 }
-/*# sourceMappingURL=main.css.map */
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: "Raleway";
+}
+
+.container {
+  margin-top: 4em;
+  margin-bottom: 65px;
+}
+
+.business {
+  margin-left: 5px;
+  margin-right: 5px;
+  height: 17vh;
+  margin-bottom: 0.4em;
+}
+
+.business h3 {
+  margin: 0;
+  padding-top: 10px;
+  margin-left: 0.7em;
+  margin-top: 0.5em;
+  color: var(--h1dark);
+  font-weight: 400;
+  font-size: 1.2em;
+}
+
+.business h4 {
+  margin: 0;
+  padding: 0;
+  margin-left: 0.7em;
+  margin-top: 1.2em;
+  color: var(--h1dark);
+  font-weight: 400;
+  font-size: 1.3em;
+}
+/*# sourceMappingURL=deals.css.map */

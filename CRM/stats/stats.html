@@ -6,11 +6,12 @@
         <meta http-equiv="X-UA-Compatible" content="ie=edge">
         <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.8.0/Chart.min.js"></script>
         <!--<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"-->
-        <link rel="stylesheet" href="style.css">
+        <link rel="stylesheet" href="stats.css">
         <link href="https://fonts.googleapis.com/css?family=Quicksand&display=swap" rel="stylesheet">
-        <link rel="stylesheet" type="text/css" href="../styles/errands.css">
+        <link rel="stylesheet" type="text/css" href="../styles/main.css">
+        <link rel="stylesheet" href="../styles/errands.css">
         <script src="readjson.js"></script>
-        <script src="index.js"></script>
+        <script src="stats.js"></script>
         <title>Document</title>
     </head>
 
@@ -18,20 +19,22 @@
 
     <!--Top navigation bar-->
     <div id="headerBar">
-        <div id="return">
-            <a href="../errands/errands.html">
-                <img src="../images/return.png">
-            </a>
+        <div id="headerLeft">
+
         </div>
 
         <div id="headerCenter">
-            <div>Avslutade ärenden</div>
+            <div>
+                <button id="showErrands" class="selected">Ärenden</button>
+                <button id="showArchive">Arkiv</button>
+                <button id="showStats">Statistik</button>
+            </div>
         </div>
-        
+
         <div id="headerRight">
             <div>
-                <button id="">
-                    <img src="">
+                <button id="openAddErrand">
+                    <img src="../images/plus.png">
                 </button>
             </div>
         </div>

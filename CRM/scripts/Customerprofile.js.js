@@ -5,7 +5,7 @@ async function getCustomers(){
         const json = await response.json();
         appendCustomerInfoToPage(json)
     }catch(e){
-        const content = document.getElementById('content');
+        const content = document.getElementById('error');
         const text = document.createTextNode('Error fetching data from API!');
         content.appendChild(text);
     };
@@ -16,7 +16,7 @@ function appendCustomerInfoToPage(company){
     const customerNameText = document.createTextNode(company.CompanyName);
     customerName.appendChild(customerNameText)
 
-    const note = document.getElementById('notes');
+    const note = document.getElementById('notesValue');
     const noteText = document.createTextNode(company.Note)
     note.appendChild(noteText)
 
@@ -43,6 +43,7 @@ function appendCustomerInfoToPage(company){
     const ongoingEvent = document.getElementById('ongoingEvents');
     const ongoingEventText = document.createTextNode(company.ongoingEvent)
     ongoingEvent.appendChild(ongoingEventText)
+    
 }
 
 async function addNoteToCustomer(id){
@@ -58,7 +59,9 @@ async function addNoteToCustomer(id){
         body: JSON.stringify(data)
     })
 }
-    
+
+
+
 getCustomers();
 
 document.getElementById("homeButton").addEventListener("click", function(){console.log("Hem in progress")});

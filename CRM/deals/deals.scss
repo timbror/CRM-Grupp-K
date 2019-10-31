@@ -6,9 +6,17 @@ body {
     font-family: "Raleway";
 }
 
+#content {
+    display: grid;
+    grid-template-rows: 1;
+    grid-template-columns: 1;
+}
+
 .container{
     margin-top: 4em;
     margin-bottom: 65px;
+    grid-row: 1;
+    grid-column: 1;
 }
 
 .business {
@@ -37,4 +45,18 @@ body {
         font-weight: 400;
         font-size: 1.3em;
     }
+}
+
+.addBusiness {
+    grid-row: 1;
+    grid-column: 1;
+    visibility: hidden;
+    height: 50vh;
+    width: 100vw;
+    margin-top:10vh;
+    background-color: var(--selected-color);
+}
+
+.visible {
+    visibility: visible;
 }

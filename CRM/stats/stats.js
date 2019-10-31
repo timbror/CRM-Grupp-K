@@ -151,7 +151,6 @@ document.addEventListener("DOMContentLoaded", function(e){
                         0
                     ],
                     backgroundColor: "#7ADE68",
-                    borderColor: 'lightgray',
                     borderWidth: 1,
                     
                 }]

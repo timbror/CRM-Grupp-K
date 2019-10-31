@@ -88,6 +88,7 @@ img {
 
 .selected {
   background-color: var(--selected-color) !important;
+  color: white !important;
 }
 
 body {
@@ -96,9 +97,22 @@ body {
   font-family: "Raleway";
 }
 
+#content {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-rows: 1;
+      grid-template-rows: 1;
+  -ms-grid-columns: 1;
+      grid-template-columns: 1;
+}
+
 .container {
   margin-top: 4em;
   margin-bottom: 65px;
+  -ms-grid-row: 1;
+  grid-row: 1;
+  -ms-grid-column: 1;
+  grid-column: 1;
 }
 
 .business {
@@ -126,5 +140,21 @@ body {
   color: var(--h1dark);
   font-weight: 400;
   font-size: 1.3em;
+}
+
+.addBusiness {
+  -ms-grid-row: 1;
+  grid-row: 1;
+  -ms-grid-column: 1;
+  grid-column: 1;
+  visibility: hidden;
+  height: 50vh;
+  width: 100vw;
+  margin-top: 10vh;
+  background-color: var(--selected-color);
+}
+
+.visible {
+  visibility: visible;
 }
 /*# sourceMappingURL=deals.css.map */

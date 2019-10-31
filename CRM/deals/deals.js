@@ -1,4 +1,5 @@
 document.addEventListener("DOMContentLoaded", function(e){
+    document.getElementById("plus").addEventListener("click", newBusiness);
     
     let api = getJSON('http://5daef40cf2946f001481d046.mockapi.io/user');
 
@@ -18,6 +19,17 @@ document.addEventListener("DOMContentLoaded", function(e){
 
             console.log(api[i].businessValue);
         }
+    }
+
+    function newBusiness () {
+        for(let i = 0; i < api.length; i++){
+            let option = document.createElement("option");
+            option.innerHTML = api[i].companyName;
+            document.getElementById("options").appendChild(option);
+            console.log(option);
+        }
+
+        document.querySelector(".addBusiness").classList.add("visible");
     }
 
     addBusiness();

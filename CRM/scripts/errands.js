@@ -39,18 +39,19 @@ class ErrandManegement {
 
 /*Class for creating and editing errand objects*/
 class Errands {
-    constructor(id, date = "", time = "", description = "") {
+    constructor(id, date = "", time = "", name = "", description = "") {
         this.IdNumber = id;
         this.date = date;
         this.time = time;
+        this.name = name;
         this.description = description;
-        this.createErrand(this.IdNumber, this.date, this.time, this.description);
+        this.createErrand(this.IdNumber, this.date, this.time, this.name, this.description);
         this.errandEditor();
         currentSession.errandId++;
     }
 
     /*Creates the errand and adds it to activeErrands array*/
-    createErrand(id, date, time, description) {
+    createErrand(id, date, time, name, description) {
         let errandBox = document.createElement("div");
         errandBox.classList = "errand";
         errandBox.id = id;
@@ -62,6 +63,9 @@ class Errands {
         let errandTime = document.createElement("div");
         errandTime.classList = "time";
         errandTime.innerHTML = time;
+
+        let errandName = document.createElement("div");
+        errandName.innerHTML = name;
 
         let errandDescription = document.createElement("div");
         errandDescription.classList = "description";
@@ -84,6 +88,7 @@ class Errands {
         errandBox.appendChild(label);
         errandBox.appendChild(errandDate);
         errandBox.appendChild(errandTime);
+        errandBox.appendChild(errandName);
         errandBox.appendChild(errandDescription);
 
         currentSession.activeErrands.push(errandBox);
@@ -153,25 +158,17 @@ document.addEventListener('DOMContentLoaded', (event) => {
 
     currentSession = new ErrandManegement();
 
-    new Errands(currentSession.errandId, "2019-10-25", "12:30", "Gör något");
-    new Errands(currentSession.errandId, "2019-10-25", "11:30", "Gör något");
-    new Errands(currentSession.errandId, "2019-10-25", "13:30", "Gör något");
-    new Errands(currentSession.errandId, "2019-10-26", "15:30", "Gör något");
-    new Errands(currentSession.errandId, "2019-10-26", "14:30", "Gör något");
-    new Errands(currentSession.errandId, "2019-10-26", "14:30", "Gör något");
-    new Errands(currentSession.errandId, "2019-10-26", "14:30", "Gör något");
-    new Errands(currentSession.errandId, "2019-10-26", "14:30", "Gör något");
-    new Errands(currentSession.errandId, "2019-10-26", "14:30", "Gör något");
-    new Errands(currentSession.errandId, "2019-10-26", "14:30", "Gör något");
-    new Errands(currentSession.errandId, "2019-10-26", "14:30", "Gör något");
-    new Errands(currentSession.errandId, "2019-10-26", "14:30", "Gör något");
-    new Errands(currentSession.errandId, "2019-10-26", "14:30", "Gör något");
-    new Errands(currentSession.errandId, "2019-10-26", "14:30", "Gör något");
-    new Errands(currentSession.errandId, "2019-10-26", "14:30", "Gör något");
-    new Errands(currentSession.errandId, "2019-10-26", "14:30", "Gör något");
-    new Errands(currentSession.errandId, "2019-10-26", "14:30", "Gör något");
-    new Errands(currentSession.errandId, "2019-10-26", "14:30", "Gör något");
-
+    $.ajax({
+        url: "https://5db0cc7e8087400014d38308.mockapi.io/tasks/errand",
+        type: "GET",
+        dataType: "json",
+        success: function (data) {
+            for (let i = 0; i < data.length; i++) {
+                $("#namePicker").append("<option value='" + data[i].name + "'>" + data[i].name + "</option>");
+                new Errands(currentSession.errandId, data[i].date, data[i].time, data[i].name, data[i].description);
+            }
+        }
+    });
 
     /*Opens the "add errand" popup window*/
     document.getElementById("openAddErrand").addEventListener("click", function () {
@@ -188,6 +185,7 @@ document.addEventListener('DOMContentLoaded', (event) => {
     /*Creates new errand object*/
     document.getElementById("addButton").addEventListener("click", function (event) {
         event.preventDefault();
+        console.log($("#namePicker :selected").val());
         document.getElementById("addErrandPopup").classList.add("hidden");
         document.getElementById("popup-background").classList.add("hidden");
         new Errands(currentSession.errandId, document.getElementById("date").value, document.getElementById("time").value, document.getElementById("desc").value);

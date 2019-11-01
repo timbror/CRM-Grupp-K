@@ -9,7 +9,7 @@ class ErrandManegement {
     /*Sorts errands by time and date*/
     sortAndPrint() {
         /*Resets the errand container*/
-        document.getElementById("errandContainer").innerHTML = "";
+        $("#errandContainer").empty();
 
         /*Sorts errand by time*/
         this.activeErrands.sort(function (a, b) {
@@ -23,16 +23,16 @@ class ErrandManegement {
 
         /*Apends errand to the errand container*/
         for (let errand of this.activeErrands) {
-            document.getElementById("errandContainer").appendChild(errand);
+            $("#errandContainer").append(errand);
         }
     }
 
     /*Prints out errands in the archive*/
     printArchive() {
-        document.getElementById("errandArchive").innerHTML = "";
+        $("#errandArchive").empty();
 
         for (let errand of this.archivedErrands) {
-            document.getElementById("errandArchive").appendChild(errand);
+            $("#errandArchive").append(errand);
         }
     }
 }
@@ -154,7 +154,9 @@ class Errands {
     }
 }
 
-document.addEventListener('DOMContentLoaded', (event) => {
+/*Instead of DOMContentLoaded*/
+$(function() {
+    console.log("ready");
 
     currentSession = new ErrandManegement();
 
@@ -171,50 +173,51 @@ document.addEventListener('DOMContentLoaded', (event) => {
     });
 
     /*Opens the "add errand" popup window*/
-    document.getElementById("openAddErrand").addEventListener("click", function () {
-        document.getElementById("date").value = "";
-        document.getElementById("time").value = "";
-        document.getElementById("desc").value = "";
-        document.getElementById("popup-background").classList.remove("hidden");
-        document.getElementById("addErrandPopup").classList.remove("hidden");
+    $("#openAddErrand").on("click", function () {
+        $("#date").val("");
+        $("#time").val("");
+        $("#desc").val("");
+        $("#popup-background").removeClass("hidden");
+        $("#addErrandPopup").removeClass("hidden");
     });
 
-    document.getElementById("popup-background").addEventListener("click", closePopup);
-    document.getElementById("closeButton").addEventListener("click", closePopup);
+    $("#popup-background").on("click", closePopup);
+    $("#closeButton").on("click", closePopup);
 
     /*Creates new errand object*/
-    document.getElementById("addButton").addEventListener("click", function (event) {
+    $("#addButton").on("click", function (event) {
         event.preventDefault();
-        console.log($("#namePicker :selected").val());
-        document.getElementById("addErrandPopup").classList.add("hidden");
-        document.getElementById("popup-background").classList.add("hidden");
-        new Errands(currentSession.errandId, document.getElementById("date").value, document.getElementById("time").value, document.getElementById("desc").value);
+        //console.log($("#namePicker :selected").val());
+        $("#addErrandPopup").addClass("hidden");
+        $("#popup-background").addClass("hidden");
+        //console.log($("#date").val());
+        new Errands(currentSession.errandId, $("#date").val(), $("#time").val(), $("#desc").val());
     });
 
     /*Closes all popup windows*/
     function closePopup(event) {
         event.preventDefault();
-        document.getElementById("addErrandPopup").classList.add("hidden");
-        document.getElementById("popup-background").classList.add("hidden");
-        document.getElementById("editErrandPopup").classList.add("hidden");
+        $("#addErrandPopup").addClass("hidden");
+        $("#popup-background").addClass("hidden");
+        $("#editErrandPopup").addClass("hidden");
     }
 
     /*Displays active errands*/
-    document.getElementById("showErrands").addEventListener("click", function (event) {
-        event.currentTarget.classList.add("selected");
-        document.getElementById("showArchive").classList.remove("selected");
-        document.getElementById("errandArchive").classList.add("hidden");
-        document.getElementById("errandContainer").classList.remove("hidden");
-        document.getElementById("openAddErrand").classList.remove("hidden");
+    $("#showErrands").on("click", function (event) {
+        $(event.currentTarget).addClass("selected");
+        $("#showArchive").removeClass("selected");
+        $("#errandArchive").addClass("hidden");
+        $("#errandContainer").removeClass("hidden");
+        $("#openAddErrand").removeClass("hidden");
     });
 
     /*Displays errands archive*/
-    document.getElementById("showArchive").addEventListener("click", function (event) {
-        event.currentTarget.classList.add("selected");
-        document.getElementById("showErrands").classList.remove("selected");
+    $("#showArchive").on("click", function (event) {
+        $(event.currentTarget).addClass("selected");
+        $("#showErrands").removeClass("selected");
         currentSession.printArchive();
-        document.getElementById("errandContainer").classList.add("hidden");
-        document.getElementById("errandArchive").classList.remove("hidden");
-        document.getElementById("openAddErrand").classList.add("hidden");
+        $("#errandContainer").addClass("hidden");
+        $("#errandArchive").removeClass("hidden");
+        $("#openAddErrand").addClass("hidden");
     });
 });

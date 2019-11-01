@@ -86,6 +86,7 @@ class Errands {
         }).appendTo(errandBox[0]);
 
         $("<div>", {
+            "class": "name",
             html: name
         }).appendTo(errandBox[0]);
 
@@ -97,52 +98,6 @@ class Errands {
         currentSession.activeErrands.push(errandBox[0]);
         currentSession.sortAndPrint();
     }
-
-    /*
-    createErrand(id, date, time, name, description) {
-        let errandBox = document.createElement("div");
-        errandBox.classList = "errand";
-        errandBox.id = id;
-
-        let errandDate = document.createElement("div");
-        errandDate.classList = "date";
-        errandDate.innerHTML = date;
-
-        let errandTime = document.createElement("div");
-        errandTime.classList = "time";
-        errandTime.innerHTML = time;
-
-        let errandName = document.createElement("div");
-        errandName.innerHTML = name;
-
-        let errandDescription = document.createElement("div");
-        errandDescription.classList = "description";
-        errandDescription.innerHTML = description;
-
-        let checkbox = document.createElement("input");
-        checkbox.setAttribute("type", "checkbox");
-        checkbox.setAttribute("name", "done");
-        checkbox.addEventListener("click", this.completeErrand);
-
-        let label = document.createElement("label");
-        label.classList = "done";
-
-        let text = document.createElement("div");
-        text.addEventListener("click", this.completeErrand);
-        text.innerHTML = "Klart";
-
-        label.appendChild(checkbox);
-        label.appendChild(text);
-        errandBox.appendChild(label);
-        errandBox.appendChild(errandDate);
-        errandBox.appendChild(errandTime);
-        errandBox.appendChild(errandName);
-        errandBox.appendChild(errandDescription);
-
-        currentSession.activeErrands.push(errandBox);
-        currentSession.sortAndPrint();
-    }
-    */
 
     /*Lets the user edit existing errands*/
     errandEditor() {
@@ -169,27 +124,28 @@ class Errands {
         }
 
         /*Adds the edited inputs to the errand*/
-        document.getElementById("edit-addButton").addEventListener("click", function (event) {
+        $("#edit-addButton").on("click", function (event) {
             event.preventDefault();
 
-            for (let errand of document.getElementsByClassName("errand")) {
+            for (let errand of $(".errand")) {
                 if (errand.id == clickedErrandId) {
-                    errand.getElementsByTagName("div")[1].innerHTML = document.getElementById("edit-date").value;
-                    errand.getElementsByTagName("div")[2].innerHTML = document.getElementById("edit-time").value;
-                    errand.getElementsByTagName("div")[4].innerHTML = document.getElementById("edit-desc").value;
+                    errand.getElementsByTagName("div")[1].innerHTML = $("#edit-date").val();
+                    errand.getElementsByTagName("div")[2].innerHTML = $("#edit-time").val();
+                    errand.getElementsByTagName("div")[3].innerHTML = $("#nameChanger").val();
+                    errand.getElementsByTagName("div")[4].innerHTML = $("#edit-desc").val();
                 }
             }
 
-            document.getElementById("popup-background").classList.add("hidden");
-            document.getElementById("editErrandPopup").classList.add("hidden");
+            $("#popup-background").addClass("hidden");
+            $("#editErrandPopup").addClass("hidden");
             currentSession.sortAndPrint();
         });
 
         /*Closes the popup without making any changes*/
-        document.getElementById("edit-closeButton").addEventListener("click", function (event) {
+        $("#edit-closeButton").on("click", function (event) {
             event.preventDefault();
-            document.getElementById("popup-background").classList.add("hidden");
-            document.getElementById("editErrandPopup").classList.add("hidden");
+            $("#popup-background").addClass("hidden");
+            $("#editErrandPopup").addClass("hidden");
         });
     }
 

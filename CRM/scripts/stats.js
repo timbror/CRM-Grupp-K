@@ -79,9 +79,6 @@ document.addEventListener("DOMContentLoaded", function(e){
 
 
     createEvents();
-    console.log(monthArray);
-    console.log(weekArray);
-    console.log(dayArray);
 
 
     function getWeekNumber(d) {
@@ -169,7 +166,6 @@ document.addEventListener("DOMContentLoaded", function(e){
 
     let j = new Date;
     j = getWeekNumber(j);
-    console.log(j);
 
     function getDayChart () {
 

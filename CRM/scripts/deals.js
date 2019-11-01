@@ -18,7 +18,6 @@ document.addEventListener("DOMContentLoaded", function(e){
             newBusiness.appendChild(h4);
             document.querySelector(".container").appendChild(newBusiness);
 
-            console.log(api[i].businessValue);
         }
     }
 
@@ -27,7 +26,6 @@ document.addEventListener("DOMContentLoaded", function(e){
             let option = document.createElement("option");
             option.innerHTML = api[i].companyName;
             document.getElementById("options").appendChild(option);
-            console.log(option);
         }
 
         document.querySelector(".addBusiness").classList.add("visible");

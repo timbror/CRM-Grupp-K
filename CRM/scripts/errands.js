@@ -198,7 +198,7 @@ $(function () {
         $("#addErrandPopup").addClass("hidden");
         $("#popup-background").addClass("hidden");
         //console.log($("#date").val());
-        new Errands(currentSession.errandId, $("#date").val(), $("#time").val(), $("#desc").val());
+        new Errands(currentSession.errandId, $("#date").val(), $("#time").val(), $("#namePicker").val(), $("#desc").val());
     });
 
     /*Closes all popup windows*/

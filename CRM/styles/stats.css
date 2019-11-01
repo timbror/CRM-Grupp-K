@@ -1,0 +1,74 @@
+html {
+  --stath1: #eee;
+  --statColor: #11d663;
+  --btnColor: rgb(70, 70, 70);
+  --btnHover: #83e0aab6;
+}
+
+.container {
+  overflow: hidden;
+  margin-top: 4em;
+  margin-right: 20px;
+  margin-left: auto;
+  width: 90vw;
+}
+
+canvas {
+  height: 40vh;
+  max-height: 40vh;
+  margin-bottom: 15px;
+}
+
+.btnContainer {
+  width: 90vw;
+  margin: auto;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.btnContainer button {
+  padding: 2px;
+  width: 24.5%;
+  border-style: none;
+  border-radius: 3px;
+  font-size: 18px;
+  font-family: 'Quicksand', sans-serif;
+  font-weight: lighter;
+  color: white;
+  background-color: #c5c5c5;
+}
+
+.btnContainer button .active {
+  background-color: #7ADE68;
+}
+
+.btnContainer button:hover {
+  background-color: #7ADE68;
+}
+
+h1 {
+  padding-right: 20px;
+  padding-left: 20px;
+  text-align: center;
+  font-size: 26px;
+  font-family: 'Quicksand', sans-serif;
+  font-weight: lighter;
+  color: var(--stath1);
+}
+
+.total span {
+  font-size: 40px;
+}
+
+#week {
+  font-size: 30px;
+  padding: 0;
+}
+/*# sourceMappingURL=stats.css.map */

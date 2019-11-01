@@ -6,11 +6,12 @@
         <meta http-equiv="X-UA-Compatible" content="ie=edge">
         <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.8.0/Chart.min.js"></script>
         <!--<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"-->
-        <link rel="stylesheet" href="style.css">
         <link href="https://fonts.googleapis.com/css?family=Quicksand&display=swap" rel="stylesheet">
-        <link rel="stylesheet" type="text/css" href="../styles/errands.css">
-        <script src="readjson.js"></script>
-        <script src="index.js"></script>
+        <link rel="stylesheet" type="text/css" href="../styles/stats.css">
+        <link rel="stylesheet" href="../styles/stats.css">
+        <link rel="stylesheet" href="../styles/main.css">
+        <script src="../scripts/readjson.js"></script>
+        <script src="../scripts/stats.js"></script>
         <title>Document</title>
     </head>
 
@@ -18,24 +19,32 @@
 
     <!--Top navigation bar-->
     <div id="headerBar">
-        <div id="return">
-            <a href="../errands/errands.html">
-                <img src="../images/return.png">
-            </a>
+        <div id="headerLeft">
+
         </div>
 
         <div id="headerCenter">
-            <div>Avslutade ärenden</div>
+            <div>
+                <button id="showErrands" class="selected">Ärenden</button>
+                <button id="showArchive">Arkiv</button>
+                <button id="showStats">Statistik</button>
+            </div>
         </div>
-        
+
         <div id="headerRight">
             <div>
-                <button id="">
-                    <img src="">
+                <button id="openAddErrand">
+                    <img src="../images/plus.png">
                 </button>
             </div>
         </div>
     </div> <!--End of headerBar-->
+    <div class="navBar">
+        <a href="../index.html">Hem</a>
+        <a href="errands.html">Ärenden</a>
+        <a href="deals.html">Affärer</a>
+        <a href="Kundprofil.html">Kunder</a>
+    </div>
 
     <!--All content here-->
     <div class="container">
@@ -61,14 +70,14 @@
             </button>
         </a>
 
-        <a href="../errands/errands.html">
+        <a href="errands.html">
             <button id="errandsButton">
                 <img src="../images/errands.png" alt="checklist">
                 <div>Ärenden</div>
             </button>
         </a>
 
-        <a>
+        <a href="deals.html">
             <button id="dealsButton">
                 <img src="../images/deals.png" alt="dollar">
                 <div>Affärer</div>

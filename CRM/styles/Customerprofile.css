@@ -1,0 +1,139 @@
+@import "main.css";
+* {
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+body {
+	padding: 0;
+	margin: 0;
+}
+html {
+    --bg: #1d201d;
+    --box-bg: linear-gradient(135deg, #11d663, #11d69b);
+    --selected-color: #4b5c4bf5;
+    --border: 1px solid gray;
+    --filter: brightness(90%);
+    --box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
+    --h1: rgb(184, 184, 184);
+    --h1dark: rgb(36, 36, 36);
+}
+  
+#headerBar {
+	position: fixed;
+	top: 0;
+	left: 0;
+	height: 55px;
+	width: 100%;
+	background-color: #84BF40;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+}
+
+#content {
+	margin-top: 55px;
+	margin-bottom: 55px;
+	width: 100%;
+	height: 100%;
+}
+
+#menuBar {
+	position: sticky;
+	bottom: 0;
+	left: 0;
+	height: 55px;
+	width: 100%;
+	background-color: #84BF40;
+	display: flex;
+	justify-content: space-around;
+}
+
+#menuBar>button {
+	background-color: inherit;
+	border: none;
+	outline: 0;
+}
+
+img {
+	width: 30px;
+	height: auto;
+}
+
+#backButton {
+	background-color: inherit;
+	border: none;
+	outline: 0;
+}
+
+
+.stuff{
+	background: #84BF40;
+    background-size:100vw 20vh;
+    border-radius: 5px;
+    text-align: center;
+    font-size: 1em;
+}
+#Header {
+    color: blanchedalmond;
+    background-color: inherit;
+    font-weight: bold;
+    text-align: center;
+    font-size: 1.3em;
+}
+
+#button {
+	background-color: #84BF40;
+	color: black;
+	border: 2px solid #84BF40;
+	align-content: center;
+}
+
+#button:hover {
+	background-color: white;
+	color: black;
+}
+#phone {
+	margin-bottom: 50px;
+	margin-top: 50px;
+	margin-left: 50px;
+	float: left;
+	color: blanchedalmond;
+}
+
+#mail {
+	margin-bottom: 50px;
+	margin-top: 50px;
+	margin-right: 50px;
+	float: right;
+	color: blanchedalmond;
+}
+textarea {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+#button{
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: auto;
+}
+#error{
+    color: white;
+    margin-top: 150px;
+    font-size: 3em;
+    text-align: center;
+}
+#customername{
+    text-align: center;
+    font-size: 1.6em;
+}
+p{
+	text-align: center;
+}
+#business{
+    margin-left: 5px;
+    margin-right: 5px;
+    height: 17vh;
+    margin-bottom: 0.4em;
+}

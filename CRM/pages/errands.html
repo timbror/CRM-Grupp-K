@@ -7,6 +7,8 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Ärenden</title>
     <link rel="stylesheet" type="text/css" href="../styles/errands.css">
+    <link rel="stylesheet" href="../styles/main.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 </head>
 
 <body>
@@ -21,6 +23,7 @@
             <div>
                 <button id="showErrands" class="selected">Ärenden</button>
                 <button id="showArchive">Arkiv</button>
+                <button id="showStats">Statistik</button>
             </div>
         </div>
 
@@ -31,6 +34,12 @@
                 </button>
             </div>
         </div>
+    </div>
+    <div class="navBar">
+        <a href="../index.html">Hem</a>
+        <a href="errands.html">Ärenden</a>
+        <a href="deals.html">Affärer</a>
+        <a href="Kundprofil.html">Kunder</a>
     </div>
     <!--End of headerBar-->
 
@@ -50,6 +59,11 @@
 
                 <label for="time">Tid:</label>
                 <input type="time" id="time">
+
+                <select id="namePicker">
+                    
+                  </select>
+                  
 
                 <label for="desc">Beskrivning:</label>
                 <textarea id="desc"></textarea>
@@ -93,35 +107,30 @@
         <a href="../index.html">
             <button id="homeButton">
                 <img src="../images/home.png" alt="house">
-                <div>Hem</div>
             </button>
         </a>
 
         <a class="selected">
             <button id="errandsButton">
                 <img src="../images/errands.png" alt="checklist">
-                <div>Ärenden</div>
             </button>
         </a>
 
-        <a>
+        <a href="deals.html">
             <button id="dealsButton">
                 <img src="../images/deals.png" alt="dollar">
-                <div>Affärer</div>
             </button>
         </a>
 
         <a>
             <button id="customersButton">
                 <img src="../images/customers.png" alt="face">
-                <div>Kontakter</div>
             </button>
         </a>
 
         <a>
             <button id="moreButton">
                 <img src="../images/more.png" alt="hamburger">
-                <div>Mer</div>
             </button>
         </a>
     </div>

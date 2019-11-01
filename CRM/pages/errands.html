@@ -55,18 +55,18 @@
                 <h1>Lägg till ärende</h1>
 
                 <label for="date">Datum:</label>
-                <input type="date" id="date">
+                <input type="date" id="date" required>
 
                 <label for="time">Tid:</label>
                 <input type="time" id="time">
 
+                <label for="namePicker">Person:</label>
                 <select id="namePicker">
-                    
-                  </select>
-                  
+                    <option value="">no person</option>
+                </select>
 
                 <label for="desc">Beskrivning:</label>
-                <textarea id="desc"></textarea>
+                <textarea id="desc" required></textarea>
 
                 <button type="submit" class="btn-add" id="addButton">Lägg Till</button>
                 <button type="submit" class="btn-cancel" id="closeButton">Avbryt</button>
@@ -83,6 +83,9 @@
 
                 <label for="edit-time">Tid:</label>
                 <input type="time" id="edit-time">
+
+                <label for="nameChanger">Person:</label>
+                <select id="nameChanger"></select>
 
                 <label for="edit-desc">Beskrivning:</label>
                 <textarea id="edit-desc"></textarea>

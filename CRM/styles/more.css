@@ -154,4 +154,18 @@ img {
 .selected {
   background-color: #4B820B !important;
 }
-/*# sourceMappingURL=home.css.map */
+#backButton {
+	background-color: inherit;
+	border: none;
+	outline: 0;
+}
+#homeButton{
+  background-color: inherit;
+	border: none;
+	outline: 0;
+}
+.column {
+  float: left;
+  width: 100%;
+  padding: 10px;
+}

@@ -5,34 +5,55 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Hem</title>
-    <link rel="stylesheet" type="text/css" href="../styles/home.css">
+    <title>Mer</title>
+    <link rel="stylesheet" type="text/css" href="../styles/more.css">
 </head>
 
 <body>
 
     <div id="headerBar">
         <div id="headerLeft">
-            <div></div>
+            <button id="backButton" onclick="goBack()">
+                <img src="../images/arrow.png" alt="checklist">
+            </button>
         </div>
-        <div id="headerCenter">
-            <div>Hem</div>
-            <div id="todayDate"></div>
+        <div id="" class="">
+            <p>Mer</p>
         </div>
         <div id="headerRight">
             <div></div>
         </div>
     </div>
-
-
+    <script>
+        function goBack() {
+            window.history.back();
+        }
+    </script>
     <div id="content">
+        <div>
+            <button id="settings">
+                <div>Inställninar</div>
+            </button>
+        </div>
+        <div>
+            <p>Säkerhet</p>
+        </div>
+        <div>
+            Sekretess
+        </div>
+        <div>
+            Om oss
+        </div>
+        <div>
+            <p>Logga ut</p>
+        </div>
     </div>
 
     <div id="menuBar">
-            <button id="homeButton">
-                <img src="../images/home.png" alt="house">
-                <div>Hem</div>
-            </button>
+        <button id="homeButton">
+            <img src="../images/home.png" alt="house">
+            <div>Hem</div>
+        </button>
         </a>
 
         <a href="errands/errands.html">

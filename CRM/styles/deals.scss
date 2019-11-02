@@ -45,6 +45,11 @@ body {
         font-weight: 400;
         font-size: 1.3em;
     }
+
+    #remove {
+        margin-left: 80%;
+        font-size: 13px;
+    }
 }
 
 
@@ -92,6 +97,7 @@ body {
     select{
         font-size: 16px;
     }
+
 }
 
 .visible {
@@ -143,6 +149,12 @@ body {
         overflow: hidden;
         z-index: 5;
         background-color: var(--bg-large);
+    }
+
+    #remove {
+        border-style: none;
+        background-color: transparent;
+        font-size: 13px;
     }
 
 }

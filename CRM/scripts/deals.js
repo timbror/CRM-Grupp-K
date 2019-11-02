@@ -39,22 +39,33 @@ document.addEventListener("DOMContentLoaded", function(e){
        let sum = document.getElementById("sum").valueAsNumber;
        let addNewBusiness = {
            companyName: company,
-           businessValue: sum
+           businessValue: sum,
        } 
        api.unshift(addNewBusiness);
        console.log(api);
        
        let newBusiness = document.createElement("div");
        newBusiness.className = "business"
+       newBusiness.id = JSON.stringify(api.length +1);
        let h3 = document.createElement("h3");
        h3.innerHTML = api[0].companyName;
        let h4 = document.createElement("h4");
        h4.innerHTML = api[0].businessValue + " USD";
+       let removeBtn = document.createElement("button");
+       removeBtn.id = "remove";
+       removeBtn.innerHTML = "Ta bort";
        newBusiness.appendChild(h3);
        newBusiness.appendChild(h4);
+       newBusiness.appendChild(removeBtn);
        document.querySelector(".container").prepend(newBusiness);
+       
+       document.getElementById(JSON.stringify(api.length +1)).addEventListener("click", remove);
 
        document.querySelector(".addBusinessContainer").classList.remove("visible");
+    }
+
+    function remove () {
+        document.getElementById(this.id).remove();
     }
 
     function cancel () {

@@ -16,7 +16,7 @@ document.addEventListener("DOMContentLoaded", function(e){
     gradient.addColorStop(1, 'rgba(255,182,193,0.5)');
 
     Chart.defaults.global.defaultFontSize = 16;
-    Chart.defaults.global.defaultFontColor = "#707070";
+    Chart.defaults.global.defaultFontColor = "#eeeeee";
 
  
     let extraApi = api;
@@ -103,10 +103,10 @@ document.addEventListener("DOMContentLoaded", function(e){
         }
         document.getElementById(btn).classList.add("active")
 
-        if(document.getElementById("D").classList[0] == "active"){
+        if(document.getElementById("D").classList[1] == "active"){
             document.getElementById("week").innerHTML = `week ${j}`;
         }else{
-            document.getElementById("week").innerHTML = " ";
+            document.getElementById("week").innerHTML = "";
         };
     }
 

@@ -75,6 +75,11 @@ body {
   font-size: 1.3em;
 }
 
+.business #remove {
+  margin-left: 80%;
+  font-size: 13px;
+}
+
 .addBusinessContainer {
   display: none;
   -ms-grid-row: 1;
@@ -189,6 +194,11 @@ body {
     overflow: hidden;
     z-index: 5;
     background-color: var(--bg-large);
+  }
+  #remove {
+    border-style: none;
+    background-color: transparent;
+    font-size: 13px;
   }
 }
 /*# sourceMappingURL=deals.css.map */

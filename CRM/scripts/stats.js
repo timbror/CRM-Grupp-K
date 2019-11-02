@@ -8,6 +8,8 @@ document.addEventListener("DOMContentLoaded", function(e){
     document.getElementById("D").classList.add("active");
     
     let api = getJSON('http://5daef40cf2946f001481d046.mockapi.io/event');
+
+    let color = "#11d69b";
     
     gradient = myChart.createLinearGradient(0, 0, 0, 400);
     gradient.addColorStop(0, 'rgba(250,174,50,0.5)');   
@@ -147,7 +149,7 @@ document.addEventListener("DOMContentLoaded", function(e){
                         dec,
                         0
                     ],
-                    backgroundColor: "#7ADE68",
+                    backgroundColor: color,
                     borderWidth: 1,
                     
                 }]
@@ -221,7 +223,7 @@ document.addEventListener("DOMContentLoaded", function(e){
                         0,
                         5
                     ],
-                    backgroundColor: "#7ADE68",
+                    backgroundColor: color,
                 }]
             },
             options:{
@@ -264,7 +266,7 @@ document.addEventListener("DOMContentLoaded", function(e){
                         weekArray[j-2].length,
                         weekArray[j-1].length,
                     ],
-                    backgroundColor: "#7ADE68",
+                    backgroundColor: color,
                 }]
             },
             options:{
@@ -300,7 +302,7 @@ document.addEventListener("DOMContentLoaded", function(e){
                         api.length,
                         0,
                     ],
-                    backgroundColor: "#7ADE68",
+                    backgroundColor: color,
                 }]
             },
             options:{

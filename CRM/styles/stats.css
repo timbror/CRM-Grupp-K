@@ -46,11 +46,11 @@ canvas {
 }
 
 .btnContainer button .active {
-  background-color: #7ADE68;
+  background-color: var(--statColor);
 }
 
 .btnContainer button:hover {
-  background-color: #7ADE68;
+  background-color: var(--statColor);
 }
 
 h1 {
@@ -71,5 +71,19 @@ h1 {
 #week {
   font-size: 30px;
   padding: 0;
+}
+
+@media only screen and (min-width: 992px) {
+  #myChart {
+    width: 80% !important;
+    margin-left: 5% !important;
+  }
+  .btnContainer {
+    width: 50% !important;
+    height: 60px;
+  }
+  .btn {
+    margin: 10px;
+  }
 }
 /*# sourceMappingURL=stats.css.map */

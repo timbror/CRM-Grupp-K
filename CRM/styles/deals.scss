@@ -13,7 +13,7 @@ body {
 }
 
 .container{
-
+    margin-top: 2em;
     margin-bottom: 65px;
     grid-row: 1;
     grid-column: 1;
@@ -100,13 +100,49 @@ body {
 
 @media only screen and (min-width: 992px) {
 
+    #content {
+        grid-template-rows: repeat(5 1fr);
+    }
+
     .container {
         grid-column: 3 / 11 !important;
+        grid-row: 1 / 5;
         display: flex;
         flex-wrap: wrap;
     }
     .business {
         width: 30vw;
+    }
+
+    .sideBar {
+        grid-column: 11 / 13;
+        margin-top: 200px;
+
+        button {
+            margin-left: 20px;
+            border-style: none;
+            background-color: var(--navbar);
+            padding: 20px;
+            font-size: 18px;
+            color: lightgray;
+            border-radius: 10px;
+            border: 1px solid lightgray;
+            box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
+
+            &:hover {
+                cursor: pointer;
+                background-color: rgb(19, 19, 19);
+            }
+        }
+    }
+
+    .addBusinessContainer {
+        grid-column: 9 / 13;
+        grid-row: 1 / 5;
+        min-width: 30vw;
+        overflow: hidden;
+        z-index: 5;
+        background-color: var(--bg-large);
     }
 
 }

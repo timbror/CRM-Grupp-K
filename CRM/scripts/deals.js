@@ -2,6 +2,7 @@ document.addEventListener("DOMContentLoaded", function(e){
     document.getElementById("plus").addEventListener("click", newBusiness);
     document.getElementById("cancel").addEventListener("click", cancel);
     document.getElementById("add").addEventListener("click", add);
+    document.getElementById("plusWeb").addEventListener("click", newBusiness);
     
     let api = getJSON('http://5daef40cf2946f001481d046.mockapi.io/user');
 

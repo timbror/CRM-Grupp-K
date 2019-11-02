@@ -17,7 +17,6 @@ html {
   border-radius: 25px;
   max-width: 100vw;
   height: 10vh;
-  grid-column: span;
   background: var(--box-bg);
   margin-bottom: 5px;
   margin-top: 5px;
@@ -34,7 +33,6 @@ body {
 }
 
 #content {
-  margin-top: 55px;
   margin-bottom: 55px;
   width: 100%;
   height: 100%;

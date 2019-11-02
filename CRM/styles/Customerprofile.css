@@ -38,86 +38,12 @@ body {
   margin: 0;
 }
 
-<<<<<<< HEAD
 #headerBar {
   position: fixed;
   top: 0;
   left: 0;
   height: 55px;
   width: 100%;
-  display: -ms-grid;
-  display: grid;
-  -ms-grid-columns: 15% 1fr 15%;
-      grid-template-columns: 15% 1fr 15%;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  justify-items: center;
-  color: var(--h1);
-}
-
-#menuBar {
-  position: fixed;
-  bottom: 0;
-  left: 0;
-  height: 55px;
-  width: 100%;
-  background-color: var(--bg);
-  border-top: var(--border);
-  display: -ms-grid;
-  display: grid;
-  -ms-grid-columns: (1fr)[5];
-      grid-template-columns: repeat(5, 1fr);
-}
-
-#menuBar a {
-  -ms-grid-column-align: center;
-      justify-self: center;
-  height: 100%;
-  width: 100%;
-  margin: 0;
-}
-
-#menuBar a button {
-  background-color: inherit;
-  border: none;
-  outline: 0;
-  height: 100%;
-  width: 100%;
-  margin: 0;
-}
-
-img {
-  width: 30px;
-  height: auto;
-  -webkit-filter: invert(100%);
-          filter: invert(100%);
-}
-
-.selected {
-  background-color: var(--selected-color) !important;
-  color: white !important;
-}
-
-* {
-  font-family: Arial, Helvetica, sans-serif;
-}
-
-body {
-  padding: 0;
-  margin: 0;
-}
-
-=======
->>>>>>> master
-#headerBar {
-  position: fixed;
-  top: 0;
-  left: 0;
-  height: 55px;
-  width: 100%;
-<<<<<<< HEAD
-=======
   display: -ms-grid;
   display: grid;
   -ms-grid-columns: 15% 1fr 15%;
@@ -277,7 +203,6 @@ body {
   left: 0;
   height: 55px;
   width: 100%;
->>>>>>> master
   background-color: #84BF40;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -356,21 +281,12 @@ img {
 #button:hover {
   background-color: white;
   color: black;
-<<<<<<< HEAD
 }
 
 body {
   background-color: #153116;
 }
 
-=======
-}
-
-body {
-  background-color: #153116;
-}
-
->>>>>>> master
 #phone {
   margin-bottom: 50px;
   margin-top: 50px;

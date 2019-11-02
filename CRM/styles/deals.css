@@ -40,7 +40,6 @@ body {
 }
 
 .container {
-  margin-top: 4em;
   margin-bottom: 65px;
   -ms-grid-row: 1;
   grid-row: 1;
@@ -75,22 +74,66 @@ body {
   font-size: 1.3em;
 }
 
-<<<<<<< HEAD
-.addBusiness {
+.addBusinessContainer {
+  display: none;
   -ms-grid-row: 1;
   grid-row: 1;
   -ms-grid-column: 1;
   grid-column: 1;
-  visibility: hidden;
+  background-color: var(--selected-color);
+  opacity: 1;
+  font-weight: lighter;
+  font-size: 20px;
+}
+
+.addBusinessContainer .addBusiness {
   height: 50vh;
-  width: 100vw;
-  margin-top: 10vh;
+  margin-top: 50px;
+  color: white;
+  font-family: Arial, Helvetica, sans-serif;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  margin-left: 40px;
+}
+
+.addBusinessContainer .divSum {
+  word-spacing: 0.5em;
+}
+
+.addBusinessContainer .addBusBtn {
+  -ms-flex-item-align: center;
+      -ms-grid-row-align: center;
+      align-self: center;
+  margin-right: 60px;
+}
+
+.addBusinessContainer h1 {
+  font-weight: lighter;
+}
+
+.addBusinessContainer button {
+  padding: 10px;
+  font-size: 16px;
+  color: lightgray;
+  border: 1px solid lightgray;
   background-color: var(--selected-color);
 }
 
+.addBusinessContainer select {
+  font-size: 16px;
+}
+
 .visible {
-  visibility: visible;
-=======
+  display: inline;
+}
+
 @media only screen and (min-width: 992px) {
   .container {
     -ms-grid-column: 3 !important;
@@ -105,6 +148,5 @@ body {
   .business {
     width: 30vw;
   }
->>>>>>> master
 }
 /*# sourceMappingURL=deals.css.map */

@@ -13,7 +13,7 @@ body {
 }
 
 .container{
-    margin-top: 4em;
+
     margin-bottom: 65px;
     grid-row: 1;
     grid-column: 1;
@@ -47,20 +47,57 @@ body {
     }
 }
 
-<<<<<<< HEAD
-.addBusiness {
+
+.addBusinessContainer {
+    display: none;
     grid-row: 1;
     grid-column: 1;
-    visibility: hidden;
-    height: 50vh;
-    width: 100vw;
-    margin-top:10vh;
     background-color: var(--selected-color);
+    opacity: 1;
+    font-weight: lighter;
+    font-size: 20px;
+
+    .addBusiness {
+        height:50vh;
+        margin-top: 50px;
+        color: white;
+        font-family: Arial, Helvetica, sans-serif;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        margin-left: 40px;
+    }
+
+    .divSum {
+        word-spacing: 0.5em; 
+    }
+
+    .addBusBtn {
+        align-self: center;
+        margin-right: 60px;
+    }
+
+    h1 {
+        font-weight: lighter;
+    }
+
+    button {
+        padding: 10px;
+        font-size: 16px;
+        color: lightgray;
+        border: 1px solid lightgray;
+        background-color: var(--selected-color);
+    }
+
+    select{
+        font-size: 16px;
+    }
 }
 
 .visible {
-    visibility: visible;
-=======
+    display: inline;
+}
+
 @media only screen and (min-width: 992px) {
 
     .container {
@@ -72,5 +109,4 @@ body {
         width: 30vw;
     }
 
->>>>>>> master
 }

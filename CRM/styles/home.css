@@ -7,6 +7,10 @@ html {
   --box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
   --h1: rgb(184, 184, 184);
   --h1dark: rgb(36, 36, 36);
+  --bg-large: rgb(230, 230, 230);
+  --navbar: rgb(59, 59, 59);
+  --nav-border: rgb(29, 29, 29);
+  --dropdown: rgb(88, 88, 88);
 }
 
 #content .todayErrands {
@@ -23,6 +27,10 @@ html {
 
 body {
   color: var(--h1);
+}
+
+#headerCenter {
+  text-align: center;
 }
 
 #content {
@@ -62,8 +70,8 @@ body {
 }
 
 #content #errandText {
-  -ms-grid-row: 4;
-  grid-row: 4;
+  -ms-grid-row: 3;
+  grid-row: 3;
   -ms-flex-item-align: end;
       -ms-grid-row-align: end;
       align-self: end;
@@ -74,33 +82,56 @@ body {
 }
 
 #content .todayErrands {
-  height: 100px;
-  margin-left: 5px;
-  margin-right: 5px;
+  color: black;
+  min-height: 50px;
+  height: auto;
+  margin: 5px;
+  padding-top: 15px;
+  padding-bottom: 15px;
+  padding-left: 5%;
+  padding-right: 5%;
 }
 
-#content #errandOne {
-  -ms-grid-row: 5;
-      grid-row-start: 5;
-  grid-row-end: 7;
+#content .todayErrands label {
+  font-weight: bold;
+  margin-right: 20px;
+  height: 50px;
+  float: right;
+  z-index: 7;
+  display: -ms-grid;
+  display: grid;
+}
+
+#content .todayErrands label * {
+  -ms-grid-column-align: center;
+      justify-self: center;
+  -ms-flex-item-align: end;
+      -ms-grid-row-align: end;
+      align-self: end;
+}
+
+#content #errand1 {
+  -ms-grid-row: 4;
+      grid-row-start: 4;
+  grid-row-end: 6;
   -ms-grid-column: 1;
       grid-column-start: 1;
   grid-column-end: 4;
 }
 
-#content #errandTwo {
-  -ms-grid-row: 7;
-      grid-row-start: 7;
-  grid-row-end: 9;
+#content #errand2 {
+  -ms-grid-row: 6;
+      grid-row-start: 6;
+  grid-row-end: 8;
   -ms-grid-column: 1;
       grid-column-start: 1;
   grid-column-end: 4;
 }
 
-#content #errandThree {
-  -ms-grid-row: 9;
-      grid-row-start: 9;
-  grid-row-end: 11;
+#content #errand3 {
+  -ms-grid-row: 8;
+      grid-row-start: 8;
+  grid-row-end: 10;
   -ms-grid-column: 1;
       grid-column-start: 1;
   grid-column-end: 4;

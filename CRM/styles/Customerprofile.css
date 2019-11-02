@@ -1,139 +1,338 @@
-@import "main.css";
 * {
-    font-family: Arial, Helvetica, sans-serif;
+  font-family: Helvetica, Arial, sans-serif;
+}
+
+html {
+  --bg: #1d201d;
+  --box-bg: linear-gradient(135deg, #11d663, #11d69b);
+  --selected-color: #4b5c4bf5;
+  --border: 1px solid gray;
+  --filter: brightness(90%);
+  --box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
+  --h1: rgb(184, 184, 184);
+  --h1dark: rgb(36, 36, 36);
+  --bg-large: rgb(230, 230, 230);
+  --navbar: rgb(59, 59, 59);
+  --nav-border: rgb(29, 29, 29);
+  --dropdown: rgb(88, 88, 88);
+}
+
+.business {
+  border-radius: 25px;
+  max-width: 100vw;
+  height: 10vh;
+  grid-column: span;
+  background: var(--box-bg);
+  margin-bottom: 5px;
+  margin-top: 5px;
+  -webkit-box-shadow: var(--box-shadow);
+          box-shadow: var(--box-shadow);
 }
 
 body {
-	padding: 0;
-	margin: 0;
-}
-html {
-    --bg: #1d201d;
-    --box-bg: linear-gradient(135deg, #11d663, #11d69b);
-    --selected-color: #4b5c4bf5;
-    --border: 1px solid gray;
-    --filter: brightness(90%);
-    --box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
-    --h1: rgb(184, 184, 184);
-    --h1dark: rgb(36, 36, 36);
-}
-  
-#headerBar {
-	position: fixed;
-	top: 0;
-	left: 0;
-	height: 55px;
-	width: 100%;
-	background-color: #84BF40;
-	display: flex;
-	justify-content: space-between;
-	align-items: center;
+  background-color: var(--bg);
+  padding: 0;
+  margin: 0;
 }
 
-#content {
-	margin-top: 55px;
-	margin-bottom: 55px;
-	width: 100%;
-	height: 100%;
+#headerBar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 55px;
+  width: 100%;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 15% 1fr 15%;
+      grid-template-columns: 15% 1fr 15%;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  justify-items: center;
+  color: var(--h1);
 }
 
 #menuBar {
-	position: sticky;
-	bottom: 0;
-	left: 0;
-	height: 55px;
-	width: 100%;
-	background-color: #84BF40;
-	display: flex;
-	justify-content: space-around;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  height: 55px;
+  width: 100%;
+  background-color: var(--bg);
+  border-top: var(--border);
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: (1fr)[5];
+      grid-template-columns: repeat(5, 1fr);
 }
 
-#menuBar>button {
-	background-color: inherit;
-	border: none;
-	outline: 0;
+#menuBar a {
+  -ms-grid-column-align: center;
+      justify-self: center;
+  height: 100%;
+  width: 100%;
+  margin: 0;
+}
+
+#menuBar a button {
+  background-color: inherit;
+  border: none;
+  outline: 0;
+  height: 100%;
+  width: 100%;
+  margin: 0;
+}
+
+.navBar {
+  display: none;
 }
 
 img {
-	width: 30px;
-	height: auto;
+  width: 30px;
+  height: auto;
+  -webkit-filter: invert(100%);
+          filter: invert(100%);
+}
+
+.selected {
+  background-color: var(--selected-color) !important;
+  color: white !important;
+}
+
+@media only screen and (min-width: 992px) {
+  body {
+    background-color: var(--bg-large);
+  }
+  #headerBar {
+    display: none;
+  }
+  #menuBar {
+    display: none;
+  }
+  #content {
+    display: -ms-grid;
+    display: grid;
+    -ms-grid-columns: (1fr)[12];
+        grid-template-columns: repeat(12, 1fr);
+  }
+  .navBar {
+    top: 0;
+    left: 0;
+    background-color: var(--navbar);
+    height: 7vh;
+    width: 100vw;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-pack: distribute;
+        justify-content: space-around;
+    justify-items: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    border-bottom: var(--nav-border);
+  }
+  .navBar a {
+    color: white;
+    text-decoration: none;
+  }
+  .navBar .dropErrand {
+    position: relative;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+  .navBar .dropErrand button {
+    background-color: var(--navbar);
+    border-style: none;
+    padding: 18px;
+    font-size: 1em;
+  }
+  .navBar .dropErrand .dropContent {
+    margin-top: 40px;
+    margin-left: 15px;
+    z-index: 1;
+    position: absolute;
+    display: none !important;
+    height: auto;
+    width: 100px;
+    background-color: var(--dropdown);
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+  .navBar .dropErrand .dropContent .a {
+    color: lightgray;
+    text-decoration: none;
+    padding: 5px;
+  }
+  .navBar .dropErrand .dropContent .a:hover {
+    background-color: lightgray;
+  }
+  .navBar .dropErrand .dropContent .a:hover a {
+    color: var(--navbar);
+  }
+  .navBar .dropErrand:hover .dropContent {
+    display: inline !important;
+  }
+}
+
+* {
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+body {
+  padding: 0;
+  margin: 0;
+}
+
+#headerBar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 55px;
+  width: 100%;
+  background-color: #84BF40;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+#content {
+  margin-top: 55px;
+  margin-bottom: 55px;
+  width: 100%;
+  height: 100%;
+}
+
+#menuBar {
+  position: -webkit-sticky;
+  position: sticky;
+  bottom: 0;
+  left: 0;
+  height: 55px;
+  width: 100%;
+  background-color: #84BF40;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+}
+
+#menuBar > button {
+  background-color: inherit;
+  border: none;
+  outline: 0;
+}
+
+img {
+  width: 30px;
+  height: auto;
 }
 
 #backButton {
-	background-color: inherit;
-	border: none;
-	outline: 0;
+  background-color: inherit;
+  border: none;
+  outline: 0;
 }
 
-
-.stuff{
-	background: #84BF40;
-    background-size:100vw 20vh;
-    border-radius: 5px;
-    text-align: center;
-    font-size: 1em;
+.stuff {
+  background: #84BF40;
+  background-size: 100vw 20vh;
+  border-radius: 5px;
+  text-align: center;
+  font-size: 1em;
 }
+
 #Header {
-    color: blanchedalmond;
-    background-color: inherit;
-    font-weight: bold;
-    text-align: center;
-    font-size: 1.3em;
+  color: blanchedalmond;
+  background-color: inherit;
+  font-weight: bold;
+  text-align: center;
+  font-size: 1.3em;
 }
 
 #button {
-	background-color: #84BF40;
-	color: black;
-	border: 2px solid #84BF40;
-	align-content: center;
+  background-color: #84BF40;
+  color: black;
+  border: 2px solid #84BF40;
+  -ms-flex-line-pack: center;
+      align-content: center;
 }
 
 #button:hover {
-	background-color: white;
-	color: black;
+  background-color: white;
+  color: black;
 }
+
+body {
+  background-color: #153116;
+}
+
 #phone {
-	margin-bottom: 50px;
-	margin-top: 50px;
-	margin-left: 50px;
-	float: left;
-	color: blanchedalmond;
+  margin-bottom: 50px;
+  margin-top: 50px;
+  margin-left: 50px;
+  float: left;
+  color: blanchedalmond;
 }
 
 #mail {
-	margin-bottom: 50px;
-	margin-top: 50px;
-	margin-right: 50px;
-	float: right;
-	color: blanchedalmond;
+  margin-bottom: 50px;
+  margin-top: 50px;
+  margin-right: 50px;
+  float: right;
+  color: blanchedalmond;
 }
+
 textarea {
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
 }
-#button{
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
-    margin-top: auto;
+
+#button {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: auto;
 }
-#error{
-    color: white;
-    margin-top: 150px;
-    font-size: 3em;
-    text-align: center;
+
+#error {
+  color: white;
+  margin-top: 150px;
+  font-size: 3em;
+  text-align: center;
 }
-#customername{
-    text-align: center;
-    font-size: 1.6em;
+
+#customername {
+  text-align: center;
+  font-size: 1.6em;
 }
-p{
-	text-align: center;
+
+p {
+  text-align: center;
 }
-#business{
-    margin-left: 5px;
-    margin-right: 5px;
-    height: 17vh;
-    margin-bottom: 0.4em;
+
+.business {
+  margin-left: 5px;
+  margin-right: 5px;
+  height: 17vh;
+  margin-bottom: 0.4em;
 }
+/*# sourceMappingURL=Customerprofile.css.map */

@@ -7,10 +7,10 @@ html {
   --box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
   --h1: rgb(184, 184, 184);
   --h1dark: rgb(36, 36, 36);
-  --bg-large: rgb(230, 230, 230);
+  --bg-large: rgb(88, 88, 88);
   --navbar: rgb(59, 59, 59);
   --nav-border: rgb(29, 29, 29);
-  --dropdown: rgb(88, 88, 88);
+  --dropdown: rgb(117, 117, 117);
 }
 
 #content .todayErrands {
@@ -135,5 +135,62 @@ body {
   -ms-grid-column: 1;
       grid-column-start: 1;
   grid-column-end: 4;
+}
+
+@media only screen and (min-width: 992px) {
+  #content {
+    -ms-grid-rows: (1fr)[6];
+        grid-template-rows: repeat(6, 1fr);
+  }
+  #content button {
+    -ms-grid-row: 1 !important;
+    grid-row: 1 !important;
+    -ms-grid-column: 11 !important;
+    grid-column: 11 !important;
+    background-color: var(--bg-large);
+    border: none;
+  }
+  #content #imgText {
+    -ms-grid-row: 1 !important;
+    grid-row: 1 !important;
+    -ms-grid-column: 11 !important;
+    grid-column: 11 !important;
+  }
+  #errand1 {
+    -ms-grid-column: 4 !important;
+    -ms-grid-column-span: 6 !important;
+    grid-column: 4 / 10 !important;
+    -ms-grid-row: 2 !important;
+    -ms-grid-row-span: 1 !important;
+    grid-row: 2 / 3 !important;
+  }
+  #errand2 {
+    -ms-grid-column: 4 !important;
+    -ms-grid-column-span: 6 !important;
+    grid-column: 4 / 10 !important;
+    -ms-grid-row: 3 !important;
+    -ms-grid-row-span: 1 !important;
+    grid-row: 3 / 4 !important;
+  }
+  #errand3 {
+    -ms-grid-column: 4 !important;
+    -ms-grid-column-span: 6 !important;
+    grid-column: 4 / 10 !important;
+    -ms-grid-row: 4 !important;
+    -ms-grid-row-span: 1 !important;
+    grid-row: 4 / 5 !important;
+  }
+  #errandText {
+    -ms-grid-row: 1 !important;
+    grid-row: 1 !important;
+    -ms-flex-item-align: center !important;
+        -ms-grid-row-align: center !important;
+        align-self: center !important;
+    -ms-grid-column: 4 !important;
+    -ms-grid-column-span: 2 !important;
+    grid-column: 4/6 !important;
+    margin-left: 25px !important;
+    font-size: 20px !important;
+  }
 }
 /*# sourceMappingURL=home.css.map */

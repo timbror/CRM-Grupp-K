@@ -89,3 +89,48 @@ body{
         grid-column-end: 4;
     }
 }
+
+
+@media only screen and (min-width: 992px) {
+
+    #content {
+        grid-template-rows: repeat(6, 1fr);
+
+        button{
+            grid-row: 1 !important;
+            grid-column: 11 !important;
+            background-color: var(--bg-large);
+            border: none;
+        }
+
+        #imgText {
+            grid-row: 1 !important;
+            grid-column: 11 !important;
+        }
+    }
+
+    #errand1 {
+        grid-column: 4 / 10 !important;
+        grid-row: 2 / 3 !important; 
+    }
+
+    #errand2 {
+        grid-column: 4 / 10 !important;
+        grid-row: 3 / 4 !important;
+    }
+
+    #errand3 {
+        grid-column: 4 / 10 !important;
+        grid-row: 4 / 5 !important;
+    }
+
+    #errandText {
+        grid-row: 1 !important;
+        align-self: center !important;
+        grid-column: 4/6 !important;
+        margin-left: 25px !important;
+        font-size: 20px !important;
+    }
+
+}
+

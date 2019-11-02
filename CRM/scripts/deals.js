@@ -2,7 +2,7 @@ document.addEventListener("DOMContentLoaded", function(e){
     
     let api = getJSON('http://5daef40cf2946f001481d046.mockapi.io/user');
 
-    console.log(api);
+    console.log(api.length);
 
     function addBusiness () {
         for(let i = 0; i < api.length; i++){

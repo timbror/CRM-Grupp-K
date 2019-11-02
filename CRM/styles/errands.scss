@@ -120,3 +120,18 @@ body {
 .hidden {
     display: none !important;
 }
+
+
+@media only screen and (min-width: 992px) {
+
+    #errandContainer {
+        grid-column: 4 / 11 !important;
+        display: flex;
+        flex-wrap: wrap;
+
+        .errand {
+            width: 25vw;
+        }
+    }
+
+}

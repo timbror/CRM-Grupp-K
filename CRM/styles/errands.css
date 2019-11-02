@@ -7,17 +7,16 @@ html {
   --box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
   --h1: rgb(184, 184, 184);
   --h1dark: rgb(36, 36, 36);
-  --bg-large: rgb(230, 230, 230);
+  --bg-large: rgb(88, 88, 88);
   --navbar: rgb(59, 59, 59);
   --nav-border: rgb(29, 29, 29);
-  --dropdown: rgb(88, 88, 88);
+  --dropdown: rgb(117, 117, 117);
 }
 
 #content .errand {
   border-radius: 25px;
   max-width: 100vw;
   height: 10vh;
-  grid-column: span;
   background: var(--box-bg);
   margin-bottom: 5px;
   margin-top: 5px;
@@ -143,5 +142,21 @@ body {
 
 .hidden {
   display: none !important;
+}
+
+@media only screen and (min-width: 992px) {
+  #errandContainer {
+    -ms-grid-column: 4 !important;
+    -ms-grid-column-span: 7 !important;
+    grid-column: 4 / 11 !important;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+  }
+  #errandContainer .errand {
+    width: 25vw;
+  }
 }
 /*# sourceMappingURL=errands.css.map */

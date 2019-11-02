@@ -10,10 +10,10 @@ html {
 
 
     //media query
-    --bg-large: rgb(230, 230, 230);
+    --bg-large: rgb(88, 88, 88);
     --navbar: rgb(59, 59, 59);
     --nav-border: rgb(29, 29, 29);
-    --dropdown: rgb(88, 88, 88);
+    --dropdown: rgb(117, 117, 117);
   }
   
   
@@ -21,7 +21,6 @@ html {
       border-radius: 25px;
       max-width: 100vw;
       height: 10vh;
-      grid-column: span;
       background: var(--box-bg);
       margin-bottom: 5px;
       margin-top: 5px;

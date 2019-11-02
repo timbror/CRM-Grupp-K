@@ -1,4 +1,4 @@
-@import "/styles/variables.scss";
+@import "variables.scss";
 
 body {
     margin: 0;
@@ -37,4 +37,17 @@ body {
         font-weight: 400;
         font-size: 1.3em;
     }
+}
+
+@media only screen and (min-width: 992px) {
+
+    .container {
+        grid-column: 3 / 11 !important;
+        display: flex;
+        flex-wrap: wrap;
+    }
+    .business {
+        width: 30vw;
+    }
+
 }

@@ -52,93 +52,100 @@ class Errands {
 
     /*Creates the errand and adds it to activeErrands array*/
     createErrand(id, date, time, name, description) {
-        let errandBox = document.createElement("div");
-        errandBox.classList = "errand";
-        errandBox.id = id;
+        let errandBox = $("<div>", {
+            "class": "errand",
+            "id": id
+        });
+ 
+        let checkbox = $("<input>", {
+            "type": "checkbox",
+            "name": "done"
+        });
+        checkbox[0].addEventListener("click", this.completeErrand);
 
-        let errandDate = document.createElement("div");
-        errandDate.classList = "date";
-        errandDate.innerHTML = date;
+        let text = $("<div>", {
+            html: "Klart"
+        });
+        text[0].addEventListener("click", this.completeErrand);
 
-        let errandTime = document.createElement("div");
-        errandTime.classList = "time";
-        errandTime.innerHTML = time;
+        $("<label>", {
+            "class": "done",
+        })
+        .append(checkbox[0])
+        .append(text[0])
+        .appendTo(errandBox[0]);
 
-        let errandName = document.createElement("div");
-        errandName.innerHTML = name;
+        $("<div>", {
+            "class": "date",
+            html: date
+        }).appendTo(errandBox[0]);
 
-        let errandDescription = document.createElement("div");
-        errandDescription.classList = "description";
-        errandDescription.innerHTML = description;
+        $("<div>", {
+            "class": "time",
+            html: time
+        }).appendTo(errandBox[0]);
 
-        let checkbox = document.createElement("input");
-        checkbox.setAttribute("type", "checkbox");
-        checkbox.setAttribute("name", "done");
-        checkbox.addEventListener("click", this.completeErrand);
+        $("<div>", {
+            "class": "name",
+            html: name
+        }).appendTo(errandBox[0]);
 
-        let label = document.createElement("label");
-        label.classList = "done";
+        $("<div>", {
+            "class": "description",
+            html: description
+        }).appendTo(errandBox[0]);
 
-        let text = document.createElement("div");
-        text.addEventListener("click", this.completeErrand);
-        text.innerHTML = "Klart";
-
-        label.appendChild(checkbox);
-        label.appendChild(text);
-        errandBox.appendChild(label);
-        errandBox.appendChild(errandDate);
-        errandBox.appendChild(errandTime);
-        errandBox.appendChild(errandName);
-        errandBox.appendChild(errandDescription);
-
-        currentSession.activeErrands.push(errandBox);
+        currentSession.activeErrands.push(errandBox[0]);
         currentSession.sortAndPrint();
     }
 
     /*Lets the user edit existing errands*/
     errandEditor() {
-        globalThis.clickedErrandId = null;
+        let clickedErrandId = null;
 
         /*Opens and adds the "text values" of the clicked errand to the edit popup*/
-        for (let errand of document.getElementsByClassName("errand")) {
+        for (let errand of $(".errand")) {
             errand.onclick = function (event) {
 
                 if (event.currentTarget.parentNode.id == "errandArchive") {
                     return;
                 }
 
-                document.getElementById("edit-date").value = event.currentTarget.getElementsByTagName("div")[1].innerHTML;
-                document.getElementById("edit-time").value = event.currentTarget.getElementsByTagName("div")[2].innerHTML;
-                document.getElementById("edit-desc").value = event.currentTarget.getElementsByTagName("div")[3].innerHTML;
-                globalThis.clickedErrandId = event.currentTarget.id;
+                $("#edit-date").val(event.currentTarget.getElementsByTagName("div")[1].innerHTML);
+                $("#edit-time").val(event.currentTarget.getElementsByTagName("div")[2].innerHTML);
+                $("#nameChanger").val(event.currentTarget.getElementsByTagName("div")[3].innerHTML);
+                $("#edit-desc").val(event.currentTarget.getElementsByTagName("div")[4].innerHTML);
 
-                document.getElementById("popup-background").classList.remove("hidden");
-                document.getElementById("editErrandPopup").classList.remove("hidden");
+                clickedErrandId = event.currentTarget.id;
+
+                $("#popup-background").removeClass("hidden");
+                $("#editErrandPopup").removeClass("hidden");
             };
         }
 
         /*Adds the edited inputs to the errand*/
-        document.getElementById("edit-addButton").addEventListener("click", function (event) {
+        $("#edit-addButton").on("click", function (event) {
             event.preventDefault();
 
-            for (let errand of document.getElementsByClassName("errand")) {
-                if (errand.id == globalThis.clickedErrandId) {
-                    errand.getElementsByTagName("div")[1].innerHTML = document.getElementById("edit-date").value;
-                    errand.getElementsByTagName("div")[2].innerHTML = document.getElementById("edit-time").value;
-                    errand.getElementsByTagName("div")[3].innerHTML = document.getElementById("edit-desc").value;
+            for (let errand of $(".errand")) {
+                if (errand.id == clickedErrandId) {
+                    errand.getElementsByTagName("div")[1].innerHTML = $("#edit-date").val();
+                    errand.getElementsByTagName("div")[2].innerHTML = $("#edit-time").val();
+                    errand.getElementsByTagName("div")[3].innerHTML = $("#nameChanger").val();
+                    errand.getElementsByTagName("div")[4].innerHTML = $("#edit-desc").val();
                 }
             }
 
-            document.getElementById("popup-background").classList.add("hidden");
-            document.getElementById("editErrandPopup").classList.add("hidden");
+            $("#popup-background").addClass("hidden");
+            $("#editErrandPopup").addClass("hidden");
             currentSession.sortAndPrint();
         });
 
         /*Closes the popup without making any changes*/
-        document.getElementById("edit-closeButton").addEventListener("click", function (event) {
+        $("#edit-closeButton").on("click", function (event) {
             event.preventDefault();
-            document.getElementById("popup-background").classList.add("hidden");
-            document.getElementById("editErrandPopup").classList.add("hidden");
+            $("#popup-background").addClass("hidden");
+            $("#editErrandPopup").addClass("hidden");
         });
     }
 
@@ -155,11 +162,10 @@ class Errands {
 }
 
 /*Instead of DOMContentLoaded*/
-$(function() {
-    console.log("ready");
-
+$(function () {
     currentSession = new ErrandManegement();
 
+    /*Creates fake errands with data from api*/
     $.ajax({
         url: "https://5db0cc7e8087400014d38308.mockapi.io/tasks/errand",
         type: "GET",
@@ -167,6 +173,7 @@ $(function() {
         success: function (data) {
             for (let i = 0; i < data.length; i++) {
                 $("#namePicker").append("<option value='" + data[i].name + "'>" + data[i].name + "</option>");
+                $("#nameChanger").append("<option value='" + data[i].name + "'>" + data[i].name + "</option>");
                 new Errands(currentSession.errandId, data[i].date, data[i].time, data[i].name, data[i].description);
             }
         }
@@ -191,7 +198,7 @@ $(function() {
         $("#addErrandPopup").addClass("hidden");
         $("#popup-background").addClass("hidden");
         //console.log($("#date").val());
-        new Errands(currentSession.errandId, $("#date").val(), $("#time").val(), $("#desc").val());
+        new Errands(currentSession.errandId, $("#date").val(), $("#time").val(), $("#namePicker").val(), $("#desc").val());
     });
 
     /*Closes all popup windows*/

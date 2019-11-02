@@ -47,6 +47,7 @@ body {
     }
 }
 
+<<<<<<< HEAD
 .addBusiness {
     grid-row: 1;
     grid-column: 1;
@@ -59,4 +60,17 @@ body {
 
 .visible {
     visibility: visible;
+=======
+@media only screen and (min-width: 992px) {
+
+    .container {
+        grid-column: 3 / 11 !important;
+        display: flex;
+        flex-wrap: wrap;
+    }
+    .business {
+        width: 30vw;
+    }
+
+>>>>>>> master
 }

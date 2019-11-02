@@ -11,6 +11,10 @@ html {
   --box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
   --h1: rgb(184, 184, 184);
   --h1dark: rgb(36, 36, 36);
+  --bg-large: rgb(88, 88, 88);
+  --navbar: rgb(59, 59, 59);
+  --nav-border: rgb(29, 29, 29);
+  --dropdown: rgb(117, 117, 117);
 }
 
 body {
@@ -67,6 +71,10 @@ body {
   margin: 0;
 }
 
+.navBar {
+  display: none;
+}
+
 img {
   width: 30px;
   height: auto;
@@ -77,5 +85,91 @@ img {
 .selected {
   background-color: var(--selected-color) !important;
   color: white !important;
+}
+
+@media only screen and (min-width: 992px) {
+  body {
+    background-color: var(--bg-large);
+  }
+  #headerBar {
+    display: none;
+  }
+  #menuBar {
+    display: none;
+  }
+  #content {
+    display: -ms-grid;
+    display: grid;
+    -ms-grid-columns: (1fr)[12];
+        grid-template-columns: repeat(12, 1fr);
+  }
+  .navBar {
+    top: 0;
+    left: 0;
+    background-color: var(--navbar);
+    height: 7vh;
+    width: 100vw;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-pack: distribute;
+        justify-content: space-around;
+    justify-items: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    border-bottom: var(--nav-border);
+  }
+  .navBar a {
+    color: white;
+    text-decoration: none;
+  }
+  .navBar .dropErrand {
+    position: relative;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+  .navBar .dropErrand button {
+    background-color: var(--navbar);
+    border-style: none;
+    padding: 18px;
+    font-size: 1em;
+  }
+  .navBar .dropErrand .dropContent {
+    margin-top: 40px;
+    margin-left: 15px;
+    z-index: 1;
+    position: absolute;
+    display: none !important;
+    height: auto;
+    width: 100px;
+    background-color: var(--dropdown);
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+  .navBar .dropErrand .dropContent .a {
+    color: lightgray;
+    text-decoration: none;
+    padding: 5px;
+  }
+  .navBar .dropErrand .dropContent .a:hover {
+    background-color: lightgray;
+  }
+  .navBar .dropErrand .dropContent .a:hover a {
+    color: var(--navbar);
+  }
+  .navBar .dropErrand:hover .dropContent {
+    display: inline !important;
+  }
 }
 /*# sourceMappingURL=main.css.map */

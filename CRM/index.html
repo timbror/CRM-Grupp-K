@@ -8,6 +8,7 @@
     <title>Hem</title>
     <link rel="stylesheet" type="text/css" href="styles/home.css">
     <link rel="stylesheet" href="styles/main.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 </head>
 
 <body>
@@ -24,6 +25,19 @@
             <div></div>
         </div>
     </div>
+    <div class="navBar">
+            <a href="index.html">Hem</a>
+            <div class="dropErrand">
+                <button><a href="pages/errands.html">Ärenden</a></button>
+                <div class="dropContent">
+                    <div class="a"><a href="">Arkiv</a></div>
+                    <div class="a"><a href="pages/stats.html">Statistik</a></div>
+                </div>        
+            </div>
+            <a href="pages/deals.html">Affärer</a>
+            <a href="pages/Kundprofil.html">Kunder</a>
+            <a href="pages/Kundprofil.html">Övrigt</a>
+    </div>
 
 
     <div id="content">
@@ -32,9 +46,9 @@
         </button>
         <div id="imgText">Inkorg</div>
         <div id="errandText">Dagens ärenden:</div>
-        <div class="todayErrands" id="errandOne"></div>
-        <div class="todayErrands" id="errandTwo"></div>
-        <div class="todayErrands" id="errandThree"></div>
+        <div class="todayErrands" id="errand1"></div>
+        <div class="todayErrands" id="errand2"></div>
+        <div class="todayErrands" id="errand3"></div>
 
     </div>
 

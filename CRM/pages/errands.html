@@ -23,7 +23,7 @@
             <div>
                 <button id="showErrands" class="selected">Ärenden</button>
                 <button id="showArchive">Arkiv</button>
-                <button id="showStats">Statistik</button>
+                <a href="stats.html"><button id="showStats">Statistik</button></a>
             </div>
         </div>
 
@@ -36,22 +36,27 @@
         </div>
     </div>
     <div class="navBar">
-            <a href="../index.html">Hem</a>
-            <div class="dropErrand">
-                <button><a href="errands.html">Ärenden</a></button>
-                <div class="dropContent">
-                    <div class="a"><a href="">Arkiv</a></div>
-                    <div class="a"><a href="stats.html">Statistik</a></div>
-                </div>        
+        <a href="../index.html">Hem</a>
+        <div class="dropErrand">
+            <button><a href="errands.html">Ärenden</a></button>
+            <div class="dropContent">
+                <div class="a"><a href="stats.html">Statistik</a></div>
             </div>
-            <a href="deals.html">Affärer</a>
-            <a href="Kundprofil.html">Kunder</a>
-            <a href="Kundprofil.html">Övrigt</a>
+        </div>
+        <a href="deals.html">Affärer</a>
+        <a href="Kundprofil.html">Kunder</a>
+        <a href="Kundprofil.html">Övrigt</a>
     </div>
     <!--End of headerBar-->
 
     <!--All content here-->
     <div id="content">
+
+        <button class="deskButtons selected" id="deskErrands">Ärenden</button>
+        <button class="deskButtons" id="deskArchive">Arkiv</button>
+
+
+        <button class="deskButtons" id="deskAddErrand">Lägg till ärende</button>
 
         <!--Background for the popup windows-->
         <div id="popup-background" class="hidden"></div>
@@ -69,7 +74,7 @@
 
                 <label for="namePicker">Person:</label>
                 <select id="namePicker">
-                    <option value="">no person</option>
+                    <option value="">välj en person...</option>
                 </select>
 
                 <label for="desc">Beskrivning:</label>
@@ -92,7 +97,9 @@
                 <input type="time" id="edit-time">
 
                 <label for="nameChanger">Person:</label>
-                <select id="nameChanger"></select>
+                <select id="nameChanger">
+                    <option value="">välj en person...</option>
+                </select>
 
                 <label for="edit-desc">Beskrivning:</label>
                 <textarea id="edit-desc"></textarea>

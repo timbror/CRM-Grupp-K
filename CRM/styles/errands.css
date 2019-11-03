@@ -49,6 +49,12 @@ body {
   border-radius: 0 3px 3px 0;
 }
 
+#headerRight button {
+  background-color: Transparent;
+  border: none;
+  outline: none;
+}
+
 #content {
   margin-bottom: 55px;
   margin-top: 30px;
@@ -144,19 +150,61 @@ body {
   display: none !important;
 }
 
+.deskButtons {
+  display: none;
+}
+
+input[type="checkbox"] {
+  width: 20px;
+  height: 20px;
+}
+
 @media only screen and (min-width: 992px) {
+  .deskButtons {
+    display: block;
+    height: 40px;
+  }
+  #deskErrands {
+    -ms-grid-column: 5 !important;
+        grid-column-start: 5 !important;
+    border: 1px solid black;
+    border-radius: 5px 0 0 5px;
+  }
+  #deskArchive {
+    -ms-grid-column: 6 !important;
+        grid-column-start: 6 !important;
+    border: 1px solid black;
+    border-radius: 0 5px 5px 0;
+  }
+  #deskAddErrand {
+    -ms-grid-column: 8 !important;
+        grid-column-start: 8 !important;
+    border: 1px solid black;
+    border-radius: 5px;
+  }
   #errandContainer {
-    -ms-grid-column: 4 !important;
-    -ms-grid-column-span: 7 !important;
-    grid-column: 4 / 11 !important;
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -ms-flex-wrap: wrap;
-        flex-wrap: wrap;
+    -ms-grid-column: 5 !important;
+    -ms-grid-column-span: 6 !important;
+    grid-column: 5 / 11 !important;
   }
   #errandContainer .errand {
     width: 25vw;
+  }
+  #errandArchive {
+    -ms-grid-column: 5 !important;
+    -ms-grid-column-span: 6 !important;
+    grid-column: 5 / 11 !important;
+  }
+  #errandArchive .errand {
+    width: 25vw;
+  }
+  .form-popup {
+    left: 30%;
+    right: 35%;
+  }
+  input[type="checkbox"] {
+    width: auto;
+    height: auto;
   }
 }
 /*# sourceMappingURL=errands.css.map */

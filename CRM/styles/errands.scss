@@ -11,22 +11,30 @@ body {
     color: var(--h1dark);
 }
 
-    #headerCenter {
-        button {
-            width: 70px;
-            float: left;
-            border: var(--border);
-            padding: 3px;
-        }
-
-        #showErrands {
-            border-radius: 3px 0 0 3px;
-        }
-
-        #showStats {
-            border-radius: 0 3px 3px 0;
-        }
+#headerCenter {
+    button {
+        width: 70px;
+        float: left;
+        border: var(--border);
+        padding: 3px;
     }
+
+    #showErrands {
+        border-radius: 3px 0 0 3px;
+    }
+
+    #showStats {
+        border-radius: 0 3px 3px 0;
+    }
+}
+
+#headerRight {
+    button {
+        background-color: Transparent;
+        border: none;
+        outline: none;
+    }
+}
 
 
 #content {
@@ -40,7 +48,7 @@ body {
         @extend %box;
         min-height: 50px;
         height: auto;
-        margin: 5px; 
+        margin: 5px;
         padding-top: 15px;
         padding-bottom: 15px;
         padding-left: 2%;
@@ -71,7 +79,7 @@ body {
             height: 50px;
             float: right;
             z-index: 7;
-            display: grid; 
+            display: grid;
 
             * {
                 justify-self: center;
@@ -121,17 +129,65 @@ body {
     display: none !important;
 }
 
+.deskButtons {
+    display: none;
+}
+
+input[type="checkbox"] {
+    width: 20px;
+    height: 20px;
+}
+
 
 @media only screen and (min-width: 992px) {
+    .deskButtons {
+        display: block;
+        height: 40px;
+    }
+
+    #deskErrands {
+        grid-column-start: 5 !important;
+        border: 1px solid black;
+        border-radius: 5px 0 0 5px;
+    }
+
+    #deskArchive {
+        grid-column-start: 6 !important;
+        border: 1px solid black;
+        border-radius: 0 5px 5px 0;
+    }
+
+    #deskAddErrand {
+        grid-column-start: 8 !important;
+        border: 1px solid black;
+        border-radius: 5px;
+    }
 
     #errandContainer {
-        grid-column: 4 / 11 !important;
-        display: flex;
-        flex-wrap: wrap;
+        grid-column: 5 / 11 !important;
+
 
         .errand {
             width: 25vw;
         }
     }
 
+    #errandArchive {
+        grid-column: 5 / 11 !important;
+
+
+        .errand {
+            width: 25vw;
+        }
+    }
+
+    .form-popup {
+        left: 30%;
+        right: 35%;
+    }
+
+    input[type="checkbox"] {
+        width: auto;
+        height: auto;
+    }
 }

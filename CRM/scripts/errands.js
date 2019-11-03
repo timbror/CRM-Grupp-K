@@ -188,6 +188,14 @@ $(function () {
         $("#addErrandPopup").removeClass("hidden");
     });
 
+    $("#deskAddErrand").on("click", function () {
+        $("#date").val("");
+        $("#time").val("");
+        $("#desc").val("");
+        $("#popup-background").removeClass("hidden");
+        $("#addErrandPopup").removeClass("hidden");
+    });
+
     $("#popup-background").on("click", closePopup);
     $("#closeButton").on("click", closePopup);
 
@@ -212,7 +220,19 @@ $(function () {
     /*Displays active errands*/
     $("#showErrands").on("click", function (event) {
         $(event.currentTarget).addClass("selected");
+        $("#deskErrands").addClass("selected");
         $("#showArchive").removeClass("selected");
+        $("#deskArchive").removeClass("selected");
+        $("#errandArchive").addClass("hidden");
+        $("#errandContainer").removeClass("hidden");
+        $("#openAddErrand").removeClass("hidden");
+    });
+
+    $("#deskErrands").on("click", function (event) {
+        $(event.currentTarget).addClass("selected");
+        $("#showErrands").addClass("selected");
+        $("#showArchive").removeClass("selected");
+        $("#deskArchive").removeClass("selected");
         $("#errandArchive").addClass("hidden");
         $("#errandContainer").removeClass("hidden");
         $("#openAddErrand").removeClass("hidden");
@@ -221,7 +241,20 @@ $(function () {
     /*Displays errands archive*/
     $("#showArchive").on("click", function (event) {
         $(event.currentTarget).addClass("selected");
+        $("#deskArchive").addClass("selected");
         $("#showErrands").removeClass("selected");
+        $("#deskErrands").removeClass("selected");
+        currentSession.printArchive();
+        $("#errandContainer").addClass("hidden");
+        $("#errandArchive").removeClass("hidden");
+        $("#openAddErrand").addClass("hidden");
+    });
+
+    $("#deskArchive").on("click", function (event) {
+        $(event.currentTarget).addClass("selected");
+        $("#showArchive").addClass("selected");
+        $("#showErrands").removeClass("selected");
+        $("#deskErrands").removeClass("selected");
         currentSession.printArchive();
         $("#errandContainer").addClass("hidden");
         $("#errandArchive").removeClass("hidden");

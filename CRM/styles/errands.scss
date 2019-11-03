@@ -1,4 +1,4 @@
-@import "./variables.scss";
+@import "variables.scss";
 
 * {
     font-family: Helvetica, Arial, sans-serif;
@@ -35,7 +35,6 @@ body {
         outline: none;
     }
 }
-
 
 #content {
     margin-bottom: 55px;
@@ -123,6 +122,11 @@ body {
         border: 1px solid #4B820B;
         border-radius: 5px;
     }
+
+    select {
+        border: initial;
+        border-radius: initial;
+    }
 }
 
 .hidden {
@@ -137,7 +141,6 @@ input[type="checkbox"] {
     width: 20px;
     height: 20px;
 }
-
 
 @media only screen and (min-width: 992px) {
     .deskButtons {
@@ -166,7 +169,6 @@ input[type="checkbox"] {
     #errandContainer {
         grid-column: 5 / 11 !important;
 
-
         .errand {
             width: 25vw;
         }
@@ -174,7 +176,6 @@ input[type="checkbox"] {
 
     #errandArchive {
         grid-column: 5 / 11 !important;
-
 
         .errand {
             width: 25vw;

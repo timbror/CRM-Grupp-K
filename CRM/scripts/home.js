@@ -1,3 +1,4 @@
+/*Creates errands*/
 class Errand {
     constructor(id, time, name, description) {
         this.id = id;
@@ -7,6 +8,7 @@ class Errand {
         this.createErrand(this.id, this.time, this.name, this.description);
     }
 
+    /*Creates and appends errand elements*/
     createErrand(id, time, name, description) {
         $("<label>")
             .append("<input type='checkbox' class='checkbox'>")
@@ -31,7 +33,9 @@ class Errand {
     }
 }
 
+/*Instead of DOMContentLoaded*/
 $(function () {
+    /*Gets todays date*/
     let options = {
         weekday: 'long',
         year: 'numeric',
@@ -41,10 +45,12 @@ $(function () {
     let today = new Date().toLocaleDateString('sv', options);
     $("#todayDate").html(today);
 
+    /*In progress, will open mail*/
     $("#mailButton").on("click", function () {
         console.log("mail in progress");
     });
 
+    /*Creates errands with data from api*/
     $.ajax({
         url: "https://5db0cc7e8087400014d38308.mockapi.io/tasks/errand",
         type: "GET",

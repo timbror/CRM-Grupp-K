@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="sv">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Home</title>
+    <link rel="stylesheet" type="text/css" href="../styles/customerlist.css">
+</head>
+
+<body>
+
+    <div id="headerBar">
+        <div id="headerLeft">
+            <div></div>
+        </div>
+        <div id="headerCenter">
+            <div>Hem</div>
+        </div>
+        <div id="headerRight">
+            <div>
+                <button id="addCustomer">
+                    <img src="../images/plus.png">
+                </button>
+            </div>
+        </div>
+    </div>
+
+
+    <div id="content">
+
+    </div>
+
+    <div id="menuBar">
+        <button id="homeButton">
+            <img src="../images/home.png" alt="house">
+            <div>Hem</div>
+        </button>
+        <button id="errandsButton">
+            <img src="../images/errands.png" alt="checklist">
+            <div>Ärenden</div>
+        </button>
+        <button id="dealsButton">
+            <img src="../images/deals.png" alt="dollar">
+            <div>Affärer</div>
+        </button>
+        <button id="customersButton">
+            <img src="../images/customers.png" alt="face">
+            <div>Kontakter</div>
+        </button>
+        <button id="moreButton">
+            <img src="../images/more.png" alt="hamburger">
+            <div>Mer</div>
+        </button>
+    </div>
+
+
+    <section class="container">
+        <h1>Mina Kunder</h1>
+        <button id="massMail">
+                <img src="../images/mail.png">
+        </button>
+        
+        <input type="search" class="light-table-filter" data-table="table-info" placeholder="Sök Kund">
+        <table class="table-info table">
+            <thead>
+                <tr class="tableRowClick">
+                    <th>Namn</th>
+                    <th>Företag</th>
+                    <th>Datum senast kontaktad</th>
+                    <th>Select</th>
+                </tr>
+            </thead>
+            <tbody>
+
+                <tr id="tableRowClick">
+                    <td>Kalle</td>
+                    <td>Mcdonalds</td>
+                    <td>2016-01-02</td>
+                    <td><label><input type="checkbox" /></label></td>
+                </tr>
+                <tr>
+                    <td>Lars</td>
+                    <td>Swedbank</td>
+                    <td>2018-01-02</td>
+                    <td><label><input type="checkbox" /></label></td>
+                </tr>
+                <tr>
+                    <td>Emilia</td>
+                    <td>SEB</td>
+                    <td>2019-11-02</td>
+                    <td><label><input type="checkbox" /></label></td>
+                </tr>
+                <tr>
+                    <td>Emil</td>
+                    <td>Nackademin</td>
+                    <td>2018-11-02</td>
+                    <td><label><input type="checkbox" /></label></td>
+                </tr>
+                <tr>
+                    <td>Lara</td>
+                    <td>Nordea</td>
+                    <td>2019-03-02</td>
+                    <td><label><input type="checkbox" /></label></td>
+                </tr>
+            </tbody>
+        </table>
+    </section>
+    <script src="customer.js"></script>
+    <script src="../scripts/main.js"></script>
+    <script src="../scripts/errands.js"></script>
+</body>
+
+</html>

@@ -22,6 +22,9 @@ body{
         grid-column-start: 2;
         grid-row-start: 2;
         justify-self: center;
+        background-color: Transparent;
+        border: none;
+        outline: none;
 
         img {
             height: 50px;
@@ -90,6 +93,10 @@ body{
     }
 }
 
+input[type="checkbox"] {
+    width: 20px;
+    height: 20px;
+}
 
 @media only screen and (min-width: 992px) {
 

@@ -30,6 +30,12 @@ body {
   font-family: "Raleway";
 }
 
+#headerRight button {
+  background-color: Transparent;
+  border: none;
+  outline: none;
+}
+
 #content {
   display: -ms-grid;
   display: grid;

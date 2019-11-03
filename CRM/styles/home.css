@@ -52,6 +52,9 @@ body {
       grid-row-start: 2;
   -ms-grid-column-align: center;
       justify-self: center;
+  background-color: Transparent;
+  border: none;
+  outline: none;
 }
 
 #content button img {
@@ -134,6 +137,11 @@ body {
   -ms-grid-column: 1;
       grid-column-start: 1;
   grid-column-end: 4;
+}
+
+input[type="checkbox"] {
+  width: 20px;
+  height: 20px;
 }
 
 @media only screen and (min-width: 992px) {

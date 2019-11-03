@@ -115,9 +115,7 @@ class Errands {
                 $("#edit-time").val(event.currentTarget.getElementsByTagName("div")[2].innerHTML);
                 $("#nameChanger").val(event.currentTarget.getElementsByTagName("div")[3].innerHTML);
                 $("#edit-desc").val(event.currentTarget.getElementsByTagName("div")[4].innerHTML);
-
                 clickedErrandId = event.currentTarget.id;
-
                 $("#popup-background").removeClass("hidden");
                 $("#editErrandPopup").removeClass("hidden");
             };

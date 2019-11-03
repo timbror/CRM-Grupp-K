@@ -11,119 +11,120 @@
 </head>
 
 <body>
-<div id="body">
-    <div id="headerBar">
-        <div id="headerLeft">
-            <button id="backButton" onclick="goBack()">
-                <img src="../images/arrow.png" alt="checklist">
-            </button>
-        </div>
-        <div id="customername" class="">
-        </div>
-        <div id="headerRight">
-            <div></div>
-        </div>
-    </div>
-    <script>
-        function goBack() {
-            window.history.back();
-        }
-    </script>
-
-<div class="navBar">
-        <a href="../index.html">Hem</a>
-        <div class="dropErrand">
-            <button><a href="errands.html">Ärenden</a></button>
-            <div class="dropContent">
-                <div class="a"><a href="">Arkiv</a></div>
-                <div class="a"><a href="stats.html">Statistik</a></div>
+    <div id="body">
+        <div id="headerBar">
+            <div id="headerLeft">
+                <button id="backButton" onclick="goBack()">
+                    <img src="../images/arrow.png" alt="checklist">
+                </button>
+            </div>
+            <div id="customername" class="">
+            </div>
+            <div id="headerRight">
+                <div></div>
             </div>
         </div>
-        <a href="deals.html">Affärer</a>
-        <a href="Kundprofil.html">Kunder</a>
-        <a href="Kundprofil.html">Övrigt</a>
+        <script>
+            function goBack() {
+                window.history.back();
+            }
+        </script>
+
+        <div class="navBar">
+            <a href="../index.html">Hem</a>
+            <div class="dropErrand">
+                <button><a href="errands.html">Ärenden</a></button>
+                <div class="dropContent">
+                    <div class="a"><a href="">Arkiv</a></div>
+                    <div class="a"><a href="stats.html">Statistik</a></div>
+                </div>
+            </div>
+            <a href="deals.html">Affärer</a>
+            <a href="Kundprofil.html">Kunder</a>
+            <a href="Kundprofil.html">Övrigt</a>
+        </div>
+
+        <div id="content">
+            <div id="">
+                <h4 id="phone"></h4>
+            </div>
+            <div>
+
+            </div>
+            <div id="mailImg">
+                <img src="../images/Phone.png" alt="phoneImg">
+                <img src="../images/mail.png" alt="mail">
+            </div>
+            <div id=>
+                <h4 id="mail" href=""></h4>
+            </div>
+        </div>
+        <div id="boxes">
+            <div>
+                <h3 id="error"></h3>
+            </div>
+            <div id="notes">
+                <form id="NotesArea" class="inputs" onsubmit="addNoteToCustomer(1); return false;">
+                    <textarea rows="4" cols="60" id="notesubmit" placeholder="Skriv anteckning..."></textarea><br>
+                    <button type="submit" id="button">Spara anteckning</button>
+                </form>
+            </div>
+            <div id="stuff">
+                <h3 id="Header">Anteckningar:<br></h3>
+                <p id="notesValue" class="Business"></p>
+            </div>
+            <div id="center">
+                <h3 id="Header">Affärsvärde:</h3>
+                <p id="businessValue" class="Business"></p>
+            </div>
+            <div class="center">
+                <h3 id="Header">Senaste kontakt:</h3>
+                <p id="lastContact" class="Business"></p>
+            </div>
+            <div class="center">
+                <h3 id="Header">Nästa konakt:</h3>
+                <p id="nextContact" class="Business"></p>
+            </div>
+            <div class="center">
+                <h3 id="Header">Pågående events:</h3>
+                <p id="ongoingEvents" class="Business"></p>
+                <br>
+                <br>
+                <br>
+            </div>
+        </div>
+        <div id="menuBar">
+            <a href="home.html">
+                <button id="homeButton">
+                    <img src="../images/home.png" alt="house">
+                </button>
+            </a>
+
+            <a href="errands.html">
+                <button id="errandsButton">
+                    <img src="../images/errands.png" alt="checklist">
+                </button>
+            </a>
+
+            <a href="deals.html">
+                <button id="dealsButton">
+                    <img src="../images/deals.png" alt="dollar">
+                </button>
+            </a>
+
+            <a href="customers.html" class="selected" z>
+                <button id="customersButton">
+                    <img src="../images/customers.png" alt="face">
+                </button>
+            </a>
+
+            <a href="more.html">
+                <button id="moreButton">
+                    <img src="../images/more.png" alt="hamburger">
+                </button>
+            </a>
+        </div>
     </div>
-
-    <div id="content">
-        <div id="">
-            <h4 id="phone"></h4>
-        </div>
-        <div>
-
-        </div>
-        <div id=>
-            <h4 id="mail" href=""></h4>
-        </div>
-        <div id="mailImg">
-        </div>
-    </div>
-    <div id="boxes">
-        <div>
-            <h3 id="error"></h3>
-        </div>
-        <div id="notes">
-        <form id="NotesArea" class="inputs" onsubmit="addNoteToCustomer(1); return false;">
-            <textarea rows="4" cols="60" id="notesubmit" placeholder="Skriv anteckning..."></textarea><br>
-            <button type="submit" id="button">Spara anteckning</button>
-        </form>
-        </div>
-        <div id="stuff">
-            <h3 id="Header">Anteckningar:<br></h3>
-            <p id="notesValue" class="Business"></p>
-        </div>
-        <div id="center">
-            <h3 id="Header">Affärsvärde:</h3>
-            <p id="businessValue" class="Business"></p>
-        </div>
-        <div class="center">
-            <h3 id="Header">Senaste kontakt:</h3>
-            <p id="lastContact" class="Business"></p>
-        </div>
-        <div class="center">
-            <h3 id="Header">Nästa konakt:</h3>
-            <p id="nextContact" class="Business"></p>
-        </div>
-        <div class="center">
-            <h3 id="Header">Pågående events:</h3>
-            <p id="ongoingEvents" class="Business"></p>
-            <br>
-            <br>
-            <br>
-        </div>
-    </div>
-
-    <div id="menuBar">
-        <a href="home.html">
-            <button id="homeButton">
-                <img src="../images/home.png" alt="house">
-            </button>
-        </a>
-
-        <a href="errands.html">
-            <button id="errandsButton">
-                <img src="../images/errands.png" alt="checklist">
-            </button>
-        </a>
-
-        <a href="deals.html">
-            <button id="dealsButton">
-                <img src="../images/deals.png" alt="dollar">
-            </button>
-        </a>
-
-        <a href="customers.html" class="selected"z>
-            <button id="customersButton">
-                <img src="../images/customers.png" alt="face">
-            </button>
-        </a>
-
-        <a href="more.html">
-            <button id="moreButton">
-                <img src="../images/more.png" alt="hamburger">
-            </button>
-        </a>
-    </div>
-</div>
     <script src="../scripts/Customerprofile.js.js"></script>
 </body>
 

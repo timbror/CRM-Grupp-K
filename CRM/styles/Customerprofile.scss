@@ -28,7 +28,7 @@
   }
   
   img {
-    width: 30px;
+    width: 50px;
     height: auto;
   }
   
@@ -93,6 +93,7 @@
     font-size: 1.6em;
   }
   #Header {
+    padding-left: 10px;
     color: white;
     background-color: inherit;
     font-weight: bold;
@@ -122,14 +123,18 @@
     }
   }
 
+  #phoneImg{
+    margin-right: 20px;
+  }
 
 @media only screen and (min-width: 992px) {
 
     #body{
-        
+        display: grid;
     } 
     .Business {
-    grid-column: 2/3;
+        grid-column: 4 !important;
+        width: 25vw;
     }
     #phone{
         padding-top: 20%;

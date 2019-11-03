@@ -1,3 +1,5 @@
+@import "./variables.scss";
+
 * {
     font-family: Helvetica, Arial, sans-serif;
 }
@@ -15,7 +17,7 @@ h1{
     left: 0;
     height: 55px;
     width: 100%;
-    background-color: #0d7a13;
+    background-color: var(--bg-large);
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -28,28 +30,11 @@ h1{
     height: 100%;
 }
 
-#menuBar {
-    position: fixed;
-    bottom: 0;
-    left: 0;
-    height: 55px;
-    width: 100%;
-    background-color: #0d7a13;
-
-    display: flex;
-    justify-content: space-around;
-}
-
-#menuBar > button {
-    background-color: inherit;
-    border: none;
-    outline: 0;
-}
-
 img {
     width: 30px;
     height: auto;
 }
+
 table, td, th{
     border: 2px solid rgba(8, 0, 0, 0.507);
     width: 100%;
@@ -59,9 +44,9 @@ table, td, th{
     
 
 }
-tr:nth-child(even) {background-color: #9add89;}
+tr:nth-child(even) {background: var(--box-bg);}
 thead{
-    background-color: #0d7a13;;
+    background: var(--box-bg);
     height: 90px;
     text-align: left;
     
@@ -78,11 +63,17 @@ outline: 0;
 
 }
 .light-table-filter{
-width: 100%;
+width: 50%;
 height:40px;
 margin: 5px auto;
-background: #9add89;
+float: right;
 border-radius:  9px;
 border: 1px solid #fff;
+}
 
+@media only screen and (min-width: 992px) {
+    .container {
+        width: 50%;
+        margin-left: 25%;
+    }
 }

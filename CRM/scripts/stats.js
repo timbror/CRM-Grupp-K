@@ -1,6 +1,6 @@
 document.addEventListener("DOMContentLoaded", function(e){
     let myChart = document.getElementById('myChart').getContext('2d');
-    
+    //eventlisteners on butttons
     document.getElementById("M").addEventListener("click", getMonthChart);
     document.getElementById("D").addEventListener("click", getDayChart);
     document.getElementById("W").addEventListener("click", getWeekChart);
@@ -9,27 +9,24 @@ document.addEventListener("DOMContentLoaded", function(e){
     
     let api = getJSON('http://5daef40cf2946f001481d046.mockapi.io/event');
 
+    //sets custom color, fontsize and default fontcolor
     let color = "#11d69b";
-    
-    gradient = myChart.createLinearGradient(0, 0, 0, 400);
-    gradient.addColorStop(0, 'rgba(250,174,50,0.5)');   
-    gradient.addColorStop(1, 'rgba(255,182,193,0.5)');
-
     Chart.defaults.global.defaultFontSize = 16;
     Chart.defaults.global.defaultFontColor = "#eeeeee";
 
- 
+    //generates tripe api to get more numbers
     let extraApi = api;
     let doubleApi = api.concat(extraApi);
     api = doubleApi;
     let tripleApi = api.concat(extraApi);
     api = tripleApi;
 
+    //gets date month and year from api + creates more random dates
     function createEvents () {
 
         for(let i = 0; i < api.length; i++){
             let event = api[i].date;
-            let myDate = new Date(event);
+            let myDate = new Date(event); 
             let newDate = {
                 //myDate.getDate()
                 date: Math.floor((Math.random() * 31) + 1),
@@ -38,10 +35,10 @@ document.addEventListener("DOMContentLoaded", function(e){
                 year: myDate.getFullYear(),
             };
             let testDate = `${newDate.year}-${newDate.month}-${newDate.date}`
-            let myTestDate = new Date(testDate);
+            let myTestDate = new Date(testDate); //creates date format testDate
 
-            newDate.day = myTestDate.getDay()+1;
-            newDate.week = getWeekNumber(myTestDate);
+            newDate.day = myTestDate.getDay()+1; //sets day of week
+            newDate.week = getWeekNumber(myTestDate); //sets week number by calling getWeekNumber
 
             assignMonth(newDate.month);
             assignWeek(newDate.week, newDate);
@@ -49,12 +46,12 @@ document.addEventListener("DOMContentLoaded", function(e){
         }
     }
 
-
+    //handmade arrays 
     let monthArray = [[],[],[],[],[],[],[],[],[],[],[],[],];
     let weekArray = [[],[],[],[],[],[],[],[],[],[],[],[],[],[],[],[],[],[],[],[],[],[],[],[],[],[],[],[],[],[],[],[],[],[],[],[],[],[],[],[],[],[],[],[],[],[],[],[],[],[],[],[],];
     let dayArray = [[],[],[],[],[],[],[],]
 
-
+    //fills month array with all months from newDate
     function assignMonth (month) {
         for(let i = 1; i <= 12; i++){
             if(month === i){
@@ -62,7 +59,7 @@ document.addEventListener("DOMContentLoaded", function(e){
             }
         }
     }
-
+    //fills week array with all weeks from newDate
     function assignWeek (week, newDate) {
         for(let i = 1; i <= 52; i++){
             if(week === i){
@@ -70,7 +67,7 @@ document.addEventListener("DOMContentLoaded", function(e){
             }
         }
     }
-
+    //fills day array with all week days from newDate
     function assignDay (day) {
         for(let i = 1; i <= 7; i++){
             if(day === i){
@@ -82,7 +79,7 @@ document.addEventListener("DOMContentLoaded", function(e){
 
     createEvents();
 
-
+    //gets week number for argument, since there is no method for this
     function getWeekNumber(d) {
         // Copy date so don't modify original
         // Set to nearest Thursday: current date + 4 - current day number
@@ -95,7 +92,7 @@ document.addEventListener("DOMContentLoaded", function(e){
         // Return array of year and week number
         return weekNo;
     }
-
+    //adds class active, and fills innerHTML of week if active
     function addActive (btn) {
         let list = document.getElementsByClassName("active");
         for (let element of list) {
@@ -110,7 +107,7 @@ document.addEventListener("DOMContentLoaded", function(e){
         };
     }
 
-    
+    //creates Month Chart based on month Array
     function getMonthChart () {
 
         let jan = monthArray[0].length;
@@ -162,13 +159,14 @@ document.addEventListener("DOMContentLoaded", function(e){
                 events: []
             }
         });
+        //writes out sum of errands
         document.getElementById("sum").innerHTML = api.length;
     }
 
-
+    //set j according to current date
     let j = new Date;
     j = getWeekNumber(j);
-
+    //creates Day Chart with data from week array
     function getDayChart () {
 
         let mon = [];
@@ -180,7 +178,7 @@ document.addEventListener("DOMContentLoaded", function(e){
         let sun = [];
 
         addActive("D");        
-
+            //adds data to day of week
             for(let i = 0; i < weekArray[j].length; i++){
                 if(weekArray[j][i].day === 1){
                     mon.push(weekArray[j][i].day);
@@ -248,7 +246,7 @@ document.addEventListener("DOMContentLoaded", function(e){
 
     getDayChart();
 
-
+    //creates week chart from data from week array
     function getWeekChart () {
 
        addActive("W");
@@ -288,6 +286,7 @@ document.addEventListener("DOMContentLoaded", function(e){
         document.getElementById("sum").innerHTML = (weekArray[j-1].length + weekArray[j-2].length + weekArray[j-3].length + weekArray[j-4].length + weekArray[j-5].length);
     }
 
+    //creates Year Chart from data from api
     function getYearChart () {
 
         addActive("Y");
@@ -327,9 +326,3 @@ document.addEventListener("DOMContentLoaded", function(e){
 
 });
 
-
-
-
-
-
-//Tankar: Skapa CSS/SCSS-variabler som jag importerar via js och sedan modifierar

@@ -200,10 +200,8 @@ $(function () {
     /*Creates new errand object*/
     $("#addButton").on("click", function (event) {
         event.preventDefault();
-        //console.log($("#namePicker :selected").val());
         $("#addErrandPopup").addClass("hidden");
         $("#popup-background").addClass("hidden");
-        //console.log($("#date").val());
         new Errands(currentSession.errandId, $("#date").val(), $("#time").val(), $("#namePicker").val(), $("#desc").val());
     });
 

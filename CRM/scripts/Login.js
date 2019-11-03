@@ -10,5 +10,3 @@ function check(form)
    alert("Användarnamnet och lösenordet stämmer inte överens!")
   }
 }
-
-console.log("hej")

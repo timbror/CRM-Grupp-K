@@ -6,8 +6,6 @@ document.addEventListener("DOMContentLoaded", function(e){
     
     let api = getJSON('http://5daef40cf2946f001481d046.mockapi.io/user');
 
-    console.log(api);
-
     //creates options for select from api
     for(let i = 0; i < api.length; i++){
         let option = document.createElement("option");
@@ -46,7 +44,6 @@ document.addEventListener("DOMContentLoaded", function(e){
        } 
        //adds it to the first index of array
        api.unshift(addNewBusiness);
-       console.log(api);
        
        //creates new business div and prepends to container
        let newBusiness = document.createElement("div");

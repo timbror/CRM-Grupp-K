@@ -145,22 +145,29 @@ textarea {
 }
 
 @media only screen and (min-width: 992px) {
-  #content {
+  #body {
     display: -ms-grid;
     display: grid;
+    -ms-grid-columns: 3;
+        grid-template-columns: 3;
   }
   #mail {
-    grid-column-start: 6/12;
+    -ms-grid-column: 3;
+    grid-column: 3;
     -ms-grid-row: 1;
     grid-row: 1;
   }
   #phone {
-    clear: both;
-    grid-column-start: 4/12;
+    -ms-grid-column: 1;
+    grid-column: 1;
+    -ms-grid-row: 1;
+    grid-row: 1;
   }
-  #customername {
-    clear: both;
-    margin-top: 10%;
+  #boxes {
+    -ms-grid-column: 2;
+    grid-column: 2;
+    -ms-grid-row: 2;
+    grid-row: 2;
   }
 }
 /*# sourceMappingURL=Customerprofile.css.map */

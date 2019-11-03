@@ -129,19 +129,20 @@
 
 @media only screen and (min-width: 992px) {
 
-    #content{
+    #body{
         display: grid;
+        grid-template-columns: 3;
     } 
     #mail{
-      grid-column-start: 6/12;
+      grid-column: 3;
       grid-row: 1;
     }
     #phone{
-      clear: both;
-      grid-column-start: 4/12;
+      grid-column: 1;
+      grid-row: 1;
     }
-    #customername{
-      clear: both;
-      margin-top: 10%;
+    #boxes{ 
+      grid-column: 2;
+      grid-row: 2;
     }
   }

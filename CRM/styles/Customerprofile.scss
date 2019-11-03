@@ -132,17 +132,7 @@
     #body{
         display: grid;
     } 
-    .Business {
-        grid-column: 4 !important;
-        width: 25vw;
-    }
-    #phone{
-        padding-top: 20%;
-    }
     #mail{
-
-    }
-    #notes{
-        margin-top: 0%;
+      grid-column: 5/12;
     }
 }

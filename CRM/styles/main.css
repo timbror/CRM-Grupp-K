@@ -9,7 +9,7 @@ html {
   --border: 1px solid gray;
   --filter: brightness(90%);
   --box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
-  --h1: rgb(184, 184, 184);
+  --h1: white;
   --h1dark: rgb(36, 36, 36);
   --bg-large: rgb(88, 88, 88);
   --navbar: rgb(59, 59, 59);
@@ -18,7 +18,7 @@ html {
 }
 
 body {
-  background-color: var(--bg);
+  background-color: var(--bg-large);
   padding: 0;
   margin: 0;
 }
@@ -45,7 +45,7 @@ body {
   left: 0;
   height: 55px;
   width: 100%;
-  background-color: var(--bg);
+  background-color: var(--navbar);
   border-top: var(--border);
   display: -ms-grid;
   display: grid;
@@ -82,7 +82,7 @@ img {
 }
 
 .selected {
-  background-color: var(--selected-color) !important;
+  background-color: var(--bg-large) !important;
   color: white !important;
 }
 

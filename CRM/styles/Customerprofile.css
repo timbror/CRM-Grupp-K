@@ -5,7 +5,7 @@ html {
   --border: 1px solid gray;
   --filter: brightness(90%);
   --box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
-  --h1: rgb(184, 184, 184);
+  --h1: white;
   --h1dark: rgb(36, 36, 36);
   --bg-large: rgb(88, 88, 88);
   --navbar: rgb(59, 59, 59);
@@ -149,16 +149,10 @@ textarea {
     display: -ms-grid;
     display: grid;
   }
-  .Business {
-    -ms-grid-column: 4 !important;
-    grid-column: 4 !important;
-    width: 25vw;
-  }
-  #phone {
-    padding-top: 20%;
-  }
-  #notes {
-    margin-top: 0%;
+  #mail {
+    -ms-grid-column: 5;
+    -ms-grid-column-span: 7;
+    grid-column: 5/12;
   }
 }
 /*# sourceMappingURL=Customerprofile.css.map */

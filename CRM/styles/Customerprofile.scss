@@ -1,61 +1,123 @@
 @import "variables.scss";
 * {
     font-family: Arial, Helvetica, sans-serif;
-}
-
-body {
-    margin: 0;
-    padding: 0;
-    font-family: "Raleway";
-}
-#content {
-    display: grid;
-    grid-template-rows: 1;
-    grid-template-columns: 1;
-}
-#headerBar {
-    top: 0;
-    left: 0;
-    height: 55px;
+}html {
+    --bg:#1d201d;
+    --box-bg:linear-gradient(135deg, #11d663, #11d69b);
+    --selected-color:#4b5c4bf5;
+    --border:1px solid gray;
+    --filter:brightness(90%);
+    --box-shadow:0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
+    --h1:rgb(184, 184, 184);
+    --h1dark:rgb(36, 36, 36);
+    --bg-large:rgb(88, 88, 88);
+    --navbar:rgb(59, 59, 59);
+    --nav-border:rgb(29, 29, 29);
+    --dropdown:rgb(117, 117, 117);
+  }
+  
+  * {
+    font-family: Arial, Helvetica, sans-serif;
+  }
+  
+  #content {
+    margin-top: 55px;
+    margin-bottom: 55px;
     width: 100%;
-    display: grid;
-    grid-template-columns: 15% 1fr 15%;
-    align-items: center;
-    justify-items: center;
-    color: var(--h1);
-}
-#menuBar {
-    position: fixed;
-    bottom: 0;
-    left: 0;
-    height: 55px;
-    width: 100%;
-    background-color: var(--bg);
-    border-top: var(--border);
+    height: 100%;
+  }
+  
+  img {
+    width: 30px;
+    height: auto;
+  }
+  
+  #backButton {
+    background-color: inherit;
+    border: none;
+    outline: 0;
+  }
 
-    display: grid;
-    grid-template-columns: repeat(5, 1fr);
-
-    a {
-        justify-self: center;
-        height: 100%;
-        width: 100%;
-
-        margin: 0;
-
-        button {
-            background-color: inherit;
-            border: none;
-            outline: 0;
-            height: 100%;
-            width: 100%;
-            margin: 0;
-        }
+  
+  #button {
+    background-color: #11d663;
+    color: black;
+    border: 2px solid #11d663;
+    -ms-flex-line-pack: center;
+    align-content: center;
+  
+    &:hover {
+      background-color: white;
+      color: black;
     }
-}
-.navBar {
-    display:none;
-}.selected {
-    background-color: var(--selected-color) !important;
-    color: white !important;
-}
+  }
+  
+  #phone {
+    margin-bottom: 50px;
+    margin-top: 50px;
+    margin-left: 50px;
+    float: left;
+    color: white;
+  }
+  
+  #mail {
+    margin-bottom: 50px;
+    margin-top: 50px;
+    margin-right: 50px;
+    float: right;
+    color: white;
+  }
+  
+  textarea {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  
+  #button {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: auto;
+  }
+  
+  #error {
+    color: white;
+    margin-top: 150px;
+    font-size: 3em;
+    text-align: center;
+  }
+  
+  #customername {
+    text-align: center;
+    font-size: 1.6em;
+  }
+  #Header {
+    color: white;
+    background-color: inherit;
+    font-weight: bold;
+    font-size: 1.3em;
+  }
+  .Business {
+    border-radius: 25px;
+    background: var(--box-bg);
+    color: black;
+    margin:0;
+    height: 10vh;
+    margin-left: 5px;
+    margin-top:5px;
+    margin-bottom: 0.4em;
+    padding-left:20px;
+    padding-top:10px;
+
+    p{
+        margin: 0;
+        padding-top: 10px;
+        margin-left: 0.7em;
+        margin-top: 0.5em;
+        color: var(--h1dark);
+        font-weight: 400;
+        font-size: 1.2em;
+        padding-left: 10px;
+    }
+  }

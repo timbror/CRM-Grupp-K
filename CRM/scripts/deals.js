@@ -8,13 +8,15 @@ document.addEventListener("DOMContentLoaded", function(e){
 
     console.log(api);
 
+    //creates options for select from api
     for(let i = 0; i < api.length; i++){
         let option = document.createElement("option");
         option.innerHTML = api[i].companyName;
         document.getElementById("options").appendChild(option);
     }
 
-    function addBusiness () {
+    //creates div business from api
+    function apiBusiness () {
         for(let i = 0; i < api.length; i++){
             let newBusiness = document.createElement("div");
             newBusiness.className = "business"
@@ -29,11 +31,12 @@ document.addEventListener("DOMContentLoaded", function(e){
         }
     }
 
+    //makes addBusinessContainer visible
     function newBusiness () {
         document.querySelector(".addBusinessContainer").classList.add("visible");
-        document.getElementById("headerBar").classList.add("hide");
     }
 
+    //gets value from select and input number and creates object addNewBusiness
     function add () {
        let company = document.getElementById("options").value;
        let sum = document.getElementById("sum").valueAsNumber;
@@ -41,9 +44,11 @@ document.addEventListener("DOMContentLoaded", function(e){
            companyName: company,
            businessValue: sum,
        } 
+       //adds it to the first index of array
        api.unshift(addNewBusiness);
        console.log(api);
        
+       //creates new business div and prepends to container
        let newBusiness = document.createElement("div");
        newBusiness.className = "business"
        newBusiness.id = JSON.stringify(api.length +1);
@@ -58,20 +63,20 @@ document.addEventListener("DOMContentLoaded", function(e){
        newBusiness.appendChild(h4);
        newBusiness.appendChild(removeBtn);
        document.querySelector(".container").prepend(newBusiness);
-       
+       //adds an eventlistener to div which calls on remove
        document.getElementById(JSON.stringify(api.length +1)).addEventListener("click", remove);
-
+       //hides addBusinessContainer when done
        document.querySelector(".addBusinessContainer").classList.remove("visible");
     }
-
+    //removes added business div
     function remove () {
         document.getElementById(this.id).remove();
     }
-
+    //cancels popup
     function cancel () {
         document.querySelector(".addBusinessContainer").classList.remove("visible");
     }
 
-    addBusiness();
+    apiBusiness();
 });
 

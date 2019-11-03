@@ -5,7 +5,7 @@ html {
   --border: 1px solid gray;
   --filter: brightness(90%);
   --box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
-  --h1: rgb(184, 184, 184);
+  --h1: white;
   --h1dark: rgb(36, 36, 36);
   --bg-large: rgb(88, 88, 88);
   --navbar: rgb(59, 59, 59);
@@ -44,7 +44,7 @@ html {
 }
 
 img {
-  width: 30px;
+  width: 50px;
   height: auto;
 }
 
@@ -109,6 +109,7 @@ textarea {
 }
 
 #Header {
+  padding-left: 10px;
   color: white;
   background-color: inherit;
   font-weight: bold;
@@ -139,17 +140,19 @@ textarea {
   padding-left: 10px;
 }
 
+#phoneImg {
+  margin-right: 20px;
+}
+
 @media only screen and (min-width: 992px) {
-  .Business {
-    -ms-grid-column: 2;
-    -ms-grid-column-span: 1;
-    grid-column: 2/3;
+  #body {
+    display: -ms-grid;
+    display: grid;
   }
-  #phone {
-    padding-top: 20%;
-  }
-  #notes {
-    margin-top: 0%;
+  #mail {
+    -ms-grid-column: 5;
+    -ms-grid-column-span: 7;
+    grid-column: 5/12;
   }
 }
 /*# sourceMappingURL=Customerprofile.css.map */

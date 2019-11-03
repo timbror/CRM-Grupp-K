@@ -122,7 +122,7 @@ body {
 }
 
 .form-popup {
-  background-color: #11d663;
+  background: var(--box-bg);
   position: fixed;
   top: 25%;
   left: 10px;

@@ -1,22 +1,17 @@
 class Errand {
-    constructor(id, date, time, name, description) {
+    constructor(id, time, name, description) {
         this.id = id;
-        this.date = date;
         this.time = time;
         this.name = name;
         this.description = description;
-        this.createErrand(this.id, this.date, this.time, this.name, this.description);
+        this.createErrand(this.id, this.time, this.name, this.description);
     }
 
-    createErrand(id, date, time, name, description) {
+    createErrand(id, time, name, description) {
         $("<label>")
             .append("<input type='checkbox' class='checkbox'>")
             .append("<div>Klart</div>")
             .appendTo("#errand" + id);
-
-        $("<div>", {
-            html: date
-        }).appendTo("#errand" + id);
 
         $("<div>", {
             html: time
@@ -56,7 +51,7 @@ $(function () {
         dataType: "json",
         success: function (data) {
             for (let i = 0; i < 3; i++) {
-                new Errand(i + 1, new Date().toLocaleDateString("sv"), data[i].time, data[i].name, data[i].description);
+                new Errand(i + 1, data[i].time, data[i].name, data[i].description);
             }
         }
     });

@@ -27,7 +27,18 @@
             </div>
         </div>
     </div>
-
+    <div class="navBar">
+        <a href="home.html">Hem</a>
+        <div class="dropErrand">
+            <button><a href="errands.html">Ärenden</a></button>
+            <div class="dropContent">
+                <div class="a"><a href="stats.html">Statistik</a></div>
+            </div>
+        </div>
+        <a href="deals.html">Affärer</a>
+        <a href="customers.html">Kunder</a>
+        <a href="more.html">Övrigt</a>
+    </div>
 
     <div id="content">
 
@@ -69,9 +80,9 @@
     <section class="container">
         <h1>Mina Kunder</h1>
         <button id="massMail">
-                <img src="../images/mail.png">
+            <img src="../images/mail.png">
         </button>
-        
+
         <input type="search" class="light-table-filter" data-table="table-info" placeholder="Sök Kund">
         <table class="table-info table">
             <thead>
@@ -82,42 +93,48 @@
                     <th>Select</th>
                 </tr>
             </thead>
-            <tbody>
-
-                <tr id="tableRowClick">
-                    <td>Kalle</td>
-                    <td>Mcdonalds</td>
-                    <td>2016-01-02</td>
-                    <td><label><input type="checkbox" /></label></td>
-                </tr>
-                <tr>
-                    <td>Lars</td>
-                    <td>Swedbank</td>
-                    <td>2018-01-02</td>
-                    <td><label><input type="checkbox" /></label></td>
-                </tr>
-                <tr>
-                    <td>Emilia</td>
-                    <td>SEB</td>
-                    <td>2019-11-02</td>
-                    <td><label><input type="checkbox" /></label></td>
-                </tr>
-                <tr>
-                    <td>Emil</td>
-                    <td>Nackademin</td>
-                    <td>2018-11-02</td>
-                    <td><label><input type="checkbox" /></label></td>
-                </tr>
-                <tr>
-                    <td>Lara</td>
-                    <td>Nordea</td>
-                    <td>2019-03-02</td>
-                    <td><label><input type="checkbox" /></label></td>
-                </tr>
-            </tbody>
+            
+                <tbody>
+                        
+                    <tr id="tableRowClick">
+                            
+                        <td><a href="Kundprofil.html">Kalle</a></td>
+                    
+                        <td>Mcdonalds</td>
+                        <td>2016-01-02</td>
+                        <td><label><input type="checkbox" /></label></td>
+                    </tr>
+                
+                    <tr>
+                        <td>Lars</td>
+                        <td>Swedbank</td>
+                        <td>2018-01-02</td>
+                        <td><label><input type="checkbox" /></label></td>
+                    </tr>
+                    <tr>
+                        <td>Emilia</td>
+                        <td>SEB</td>
+                        <td>2019-11-02</td>
+                        <td><label><input type="checkbox" /></label></td>
+                    </tr>
+                    <tr>
+                        <td>Emil</td>
+                        <td>Nackademin</td>
+                        <td>2018-11-02</td>
+                        <td><label><input type="checkbox" /></label></td>
+                    </tr>
+                    <tr>
+                        <td>Lara</td>
+                        <td>Nordea</td>
+                        <td>2019-03-02</td>
+                        <td><label><input type="checkbox" /></label></td>
+                    </tr>
+                    
+                </tbody>
+            
         </table>
     </section>
-    
+
     <script src="../scripts/customer.js"></script>
 </body>
 

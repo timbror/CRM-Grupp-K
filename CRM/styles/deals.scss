@@ -6,6 +6,14 @@ body {
     font-family: "Raleway";
 }
 
+#headerRight {
+    button {
+        background-color: Transparent;
+        border: none;
+        outline: none;
+    }
+}
+
 #content {
     display: grid;
     grid-template-rows: 1;

@@ -145,14 +145,26 @@ textarea {
 }
 
 @media only screen and (min-width: 992px) {
-  #body {
+  #content {
     display: -ms-grid;
     display: grid;
   }
   #mail {
-    -ms-grid-column: 5;
-    -ms-grid-column-span: 7;
-    grid-column: 5/12;
+    -ms-grid-column: 6;
+    -ms-grid-column-span: 6;
+    grid-column: 6/12;
+    -ms-grid-row: 1;
+    grid-row: 1;
+  }
+  #phone {
+    clear: both;
+    -ms-grid-column: 4;
+    -ms-grid-column-span: 8;
+    grid-column: 4/12;
+  }
+  #customername {
+    clear: both;
+    margin-top: 10%;
   }
 }
 /*# sourceMappingURL=Customerprofile.css.map */

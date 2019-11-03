@@ -103,7 +103,7 @@
     background: var(--box-bg);
     color: black;
     margin:0;
-    height: 10vh;
+    height: 7vh;
     margin-left: 5px;
     margin-top:5px;
     margin-bottom: 0.4em;
@@ -121,3 +121,23 @@
         padding-left: 10px;
     }
   }
+
+
+@media only screen and (min-width: 992px) {
+
+    #body{
+        
+    } 
+    .Business {
+    grid-column: 2/3;
+    }
+    #phone{
+        padding-top: 20%;
+    }
+    #mail{
+
+    }
+    #notes{
+        margin-top: 0%;
+    }
+}

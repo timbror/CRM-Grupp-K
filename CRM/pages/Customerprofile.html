@@ -18,39 +18,42 @@
                 <img src="../images/arrow.png" alt="checklist">
             </button>
         </div>
-        <div id="customername" class= "">
+        <div id="customername" class="">
         </div>
         <div id="headerRight">
             <div></div>
         </div>
     </div>
-<script>
+    <script>
         function goBack() {
-        window.history.back();}
-</script>
+            window.history.back();
+        }
+    </script>
 
     <div id="content">
         <div id="">
             <p id="phone"></p>
         </div>
         <div>
-            
+
         </div>
         <div id=>
             <a id="mail" href=""></a>
         </div>
-            <div id="mailImg">
-            </div>
+        <div id="mailImg">
+        </div>
     </div>
     <div id="boxes">
-        <div><h3 id="error"></h3></div>
+        <div>
+            <h3 id="error"></h3>
+        </div>
         <form id="NotesArea" class="inputs" onsubmit="addNoteToCustomer(1); return false;">
             <textarea rows="4" cols="60" id="notesubmit"></textarea><br>
             <button type="submit" id="button">Add note</button>
         </form>
         <div id="">
-        <p id="Header">Notes:<br></p>
-        <p id="notesValue" class="Business"></p>
+            <p id="Header">Notes:<br></p>
+            <p id="notesValue" class="Business"></p>
         </div>
         <div id="Business">
             <p id="Header">Business value:</p>
@@ -71,26 +74,40 @@
     </div>
 
     <div id="menuBar">
-        <button id="homeButton">
-            <img src="../images/home.png" alt="house">
-            <div></div>
-        </button>
-        <button id="errandsButton">
-            <img src="../images/errands.png" alt="checklist">
-            <div></div>
-        </button>
-        <button id="dealsButton">
-            <img src="../images/deals.png" alt="dollar">
-            <div></div>
-        </button>
-        <button id="customersButton">
-            <img src="../images/customers.png" alt="face">
-            <div></div>
-        </button>
-        <button id="moreButton">
-            <img src="../images/more.png" alt="hamburger">
-            <div></div>
-        </button>
+        <a href="index.html">
+            <button id="homeButton">
+                <img src="../images/home.png" alt="house">
+                <div>Hem</div>
+            </button>
+        </a>
+
+        <a href="errands.html">
+            <button id="errandsButton">
+                <img src="../images/errands.png" alt="checklist">
+                <div>Ärenden</div>
+            </button>
+        </a>
+
+        <a href="deals.html">
+            <button id="dealsButton">
+                <img src="../images/deals.png" alt="dollar">
+                <div>Affärer</div>
+            </button>
+        </a>
+
+        <a>
+            <button id="customersButton">
+                <img src="../images/customers.png" alt="face">
+                <div>Kontakter</div>
+            </button>
+        </a>
+
+        <a href="more.html" class="selected">
+            <button id="moreButton">
+                <img src="../images/more.png" alt="hamburger">
+                <div>Mer</div>
+            </button>
+        </a>
     </div>
 
     <script src="../scripts/Customerprofile.js.js"></script>

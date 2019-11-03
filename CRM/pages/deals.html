@@ -1,17 +1,17 @@
 <!DOCTYPE html>
 <html lang="sv">
 
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <meta http-equiv="X-UA-Compatible" content="ie=edge">
-        <script src="../scripts/deals.js"></script>
-        <script src="../scripts/readjson.js"></script>
-        <link rel="stylesheet" type="text/css" href="../styles/main.css">
-        <link rel="stylesheet" href="../styles/deals.css">
-        <link href="https://fonts.googleapis.com/css?family=Raleway&display=swap" rel="stylesheet">
-        <title>Document</title>
-    </head>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src="../scripts/deals.js"></script>
+    <script src="../scripts/readjson.js"></script>
+    <link rel="stylesheet" type="text/css" href="../styles/main.css">
+    <link rel="stylesheet" href="../styles/deals.css">
+    <link href="https://fonts.googleapis.com/css?family=Raleway&display=swap" rel="stylesheet">
+    <title>Document</title>
+</head>
 
 <body>
 
@@ -29,17 +29,17 @@
         </div>
     </div>
     <div class="navBar">
-            <a href="../index.html">Hem</a>
-            <div class="dropErrand">
-                <button><a href="errands.html">Ärenden</a></button>
-                <div class="dropContent">
-                    <div class="a"><a href="">Arkiv</a></div>
-                    <div class="a"><a href="stats.html">Statistik</a></div>
-                </div>        
+        <a href="../index.html">Hem</a>
+        <div class="dropErrand">
+            <button><a href="errands.html">Ärenden</a></button>
+            <div class="dropContent">
+                <div class="a"><a href="">Arkiv</a></div>
+                <div class="a"><a href="stats.html">Statistik</a></div>
             </div>
-            <a href="deals.html">Affärer</a>
-            <a href="Kundprofil.html">Kunder</a>
-            <a href="Kundprofil.html">Övrigt</a>
+        </div>
+        <a href="deals.html">Affärer</a>
+        <a href="Kundprofil.html">Kunder</a>
+        <a href="Kundprofil.html">Övrigt</a>
     </div>
 
 
@@ -48,20 +48,22 @@
         </div>
         <div class="addBusinessContainer">
             <div class="addBusiness">
-                <div><h1>Lägg till ny affär</h1></div>
+                <div>
+                    <h1>Lägg till ny affär</h1>
+                </div>
                 <div>
                     <label for="options">Företag</label>
                     <select name="options" id="options"></select>
                 </div>
                 <div class="divSum">
-                        <label for="sum">Summa</h3>
+                    <label for="sum">Summa</h3>
                         <input type="number" name="sum" id="sum">
                 </div>
                 <div class="addBusBtn">
-                        <button id="add" type="submit">Lägg till</button>
+                    <button id="add" type="submit">Lägg till</button>
                 </div>
                 <div class="addBusBtn">
-                        <button id="cancel">Avbryt</button>
+                    <button id="cancel">Avbryt</button>
                 </div>
             </div>
         </div>
@@ -73,7 +75,7 @@
     </div>
 
     <div id="menuBar">
-        <a href="../index.html">
+        <a href="home.html">
             <button id="homeButton">
                 <img src="../images/home.png" alt="house">
             </button>
@@ -85,19 +87,19 @@
             </button>
         </a>
 
-        <a>
-            <button id="dealsButton" class="selected">
+        <a href="deals.html" class="selected">
+            <button id="dealsButton">
                 <img src="../images/deals.png" alt="dollar">
             </button>
         </a>
 
-        <a>
+        <a href="customers.html">
             <button id="customersButton">
                 <img src="../images/customers.png" alt="face">
             </button>
         </a>
 
-        <a>
+        <a href="more.html">
             <button id="moreButton">
                 <img src="../images/more.png" alt="hamburger">
             </button>

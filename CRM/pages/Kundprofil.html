@@ -7,6 +7,7 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Home</title>
     <link rel="stylesheet" type="text/css" href="../styles/Customerprofile.css.css">
+    <link rel="stylesheet" type="text/css" href="../styles/main.css">
 </head>
 
 <body>
@@ -65,26 +66,35 @@
     </div>
 
     <div id="menuBar">
-        <button id="homeButton">
-            <img src="../images/home.png" alt="house">
-            <div>Hem</div>
-        </button>
-        <button id="errandsButton">
-            <img src="../images/errands.png" alt="checklist">
-            <div>Ärenden</div>
-        </button>
-        <button id="dealsButton">
-            <img src="../images/deals.png" alt="dollar">
-            <div>Affärer</div>
-        </button>
-        <button id="customersButton">
-            <img src="../images/customers.png" alt="face">
-            <div>Kontakter</div>
-        </button>
-        <button id="moreButton">
-            <img src="../images/more.png" alt="hamburger">
-            <div>Mer</div>
-        </button>
+        <a href="home.html">
+            <button id="homeButton">
+                <img src="../images/home.png" alt="house">
+            </button>
+        </a>
+
+        <a href="errands.html">
+            <button id="errandsButton">
+                <img src="../images/errands.png" alt="checklist">
+            </button>
+        </a>
+
+        <a href="deals.html">
+            <button id="dealsButton">
+                <img src="../images/deals.png" alt="dollar">
+            </button>
+        </a>
+
+        <a href="customers.html" class="selected"z>
+            <button id="customersButton">
+                <img src="../images/customers.png" alt="face">
+            </button>
+        </a>
+
+        <a href="more.html">
+            <button id="moreButton">
+                <img src="../images/more.png" alt="hamburger">
+            </button>
+        </a>
     </div>
 
     <script src="../scripts/Customerprofile.js.js"></script>

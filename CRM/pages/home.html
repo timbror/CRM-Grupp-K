@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="sv">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Hem</title>
+    <link rel="stylesheet" type="text/css" href="../styles/home.css">
+    <link rel="stylesheet" href="../styles/main.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+</head>
+
+<body>
+
+    <div id="headerBar">
+        <div id="headerLeft">
+            <div></div>
+        </div>
+        <div id="headerCenter">
+            <div>Hem</div>
+            <div id="todayDate"></div>
+        </div>
+        <div id="headerRight">
+            <div></div>
+        </div>
+    </div>
+    <div class="navBar">
+            <a href="index.html">Hem</a>
+            <div class="dropErrand">
+                <button><a href="pages/errands.html">Ärenden</a></button>
+                <div class="dropContent">
+                    <div class="a"><a href="">Arkiv</a></div>
+                    <div class="a"><a href="pages/stats.html">Statistik</a></div>
+                </div>        
+            </div>
+            <a href="deals.html">Affärer</a>
+            <a href="Kundprofil.html">Kunder</a>
+            <a href="Kundprofil.html">Övrigt</a>
+    </div>
+
+
+    <div id="content">
+        <button id="mailButton">
+            <img src="../images/mail.png">
+        </button>
+        <div id="imgText">Inkorg</div>
+        <div id="errandText">Dagens ärenden:</div>
+        <div class="todayErrands" id="errand1"></div>
+        <div class="todayErrands" id="errand2"></div>
+        <div class="todayErrands" id="errand3"></div>
+
+    </div>
+
+    <div id="menuBar">
+        <a href="home.html" class="selected">
+            <button id="homeButton">
+                <img src="../images/home.png" alt="house">
+            </button>
+        </a>
+
+        <a href="errands.html">
+            <button id="errandsButton">
+                <img src="../images/errands.png" alt="checklist">
+            </button>
+        </a>
+
+        <a href="deals.html">
+            <button id="dealsButton">
+                <img src="../images/deals.png" alt="dollar">
+            </button>
+        </a>
+
+        <a href="customers.html">
+            <button id="customersButton">
+                <img src="../images/customers.png" alt="face">
+            </button>
+        </a>
+
+        <a href="more.html">
+            <button id="moreButton">
+                <img src="../images/more.png" alt="hamburger">
+            </button>
+        </a>
+    </div>
+
+    <script src="../scripts/home.js"></script> 
+</body>
+
+</html>

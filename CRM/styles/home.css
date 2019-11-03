@@ -152,50 +152,51 @@ input[type="checkbox"] {
   #content button {
     -ms-grid-row: 1 !important;
     grid-row: 1 !important;
-    -ms-grid-column: 11 !important;
-    grid-column: 11 !important;
+    -ms-grid-column: 5 !important;
+    grid-column: 5 !important;
     background-color: var(--bg-large);
     border: none;
   }
   #content #imgText {
     -ms-grid-row: 1 !important;
     grid-row: 1 !important;
-    -ms-grid-column: 11 !important;
-    grid-column: 11 !important;
+    -ms-grid-column: 5 !important;
+    grid-column: 5 !important;
+    -ms-flex-item-align: end;
+        align-self: flex-end;
   }
   #errand1 {
-    -ms-grid-column: 4 !important;
-    -ms-grid-column-span: 6 !important;
-    grid-column: 4 / 10 !important;
-    -ms-grid-row: 2 !important;
-    -ms-grid-row-span: 1 !important;
-    grid-row: 2 / 3 !important;
-  }
-  #errand2 {
-    -ms-grid-column: 4 !important;
-    -ms-grid-column-span: 6 !important;
-    grid-column: 4 / 10 !important;
+    -ms-grid-column: 5 !important;
+    -ms-grid-column-span: 4 !important;
+    grid-column: 5 / 9 !important;
     -ms-grid-row: 3 !important;
     -ms-grid-row-span: 1 !important;
     grid-row: 3 / 4 !important;
   }
-  #errand3 {
-    -ms-grid-column: 4 !important;
-    -ms-grid-column-span: 6 !important;
-    grid-column: 4 / 10 !important;
+  #errand2 {
+    -ms-grid-column: 5 !important;
+    -ms-grid-column-span: 4 !important;
+    grid-column: 5 / 9 !important;
     -ms-grid-row: 4 !important;
     -ms-grid-row-span: 1 !important;
     grid-row: 4 / 5 !important;
   }
+  #errand3 {
+    -ms-grid-column: 5 !important;
+    -ms-grid-column-span: 4 !important;
+    grid-column: 5 / 9 !important;
+    -ms-grid-row: 5 !important;
+    -ms-grid-row-span: 1 !important;
+    grid-row: 5 / 6 !important;
+  }
   #errandText {
-    -ms-grid-row: 1 !important;
-    grid-row: 1 !important;
-    -ms-flex-item-align: center !important;
-        -ms-grid-row-align: center !important;
-        align-self: center !important;
-    -ms-grid-column: 4 !important;
+    -ms-grid-row: 2 !important;
+    grid-row: 2 !important;
+    -ms-flex-item-align: end !important;
+        align-self: flex-end !important;
+    -ms-grid-column: 5 !important;
     -ms-grid-column-span: 2 !important;
-    grid-column: 4/6 !important;
+    grid-column: 5/7 !important;
     margin-left: 25px !important;
     font-size: 20px !important;
   }

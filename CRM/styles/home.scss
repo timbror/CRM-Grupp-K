@@ -105,36 +105,37 @@ input[type="checkbox"] {
 
         button{
             grid-row: 1 !important;
-            grid-column: 11 !important;
+            grid-column: 5 !important;
             background-color: var(--bg-large);
             border: none;
         }
 
         #imgText {
             grid-row: 1 !important;
-            grid-column: 11 !important;
+            grid-column: 5 !important;
+            align-self: flex-end;
         }
     }
 
     #errand1 {
-        grid-column: 4 / 10 !important;
-        grid-row: 2 / 3 !important; 
+        grid-column: 5 / 9 !important;
+        grid-row: 3 / 4 !important; 
     }
 
     #errand2 {
-        grid-column: 4 / 10 !important;
-        grid-row: 3 / 4 !important;
-    }
-
-    #errand3 {
-        grid-column: 4 / 10 !important;
+        grid-column: 5 / 9 !important;
         grid-row: 4 / 5 !important;
     }
 
+    #errand3 {
+        grid-column: 5 / 9 !important;
+        grid-row: 5 / 6 !important;
+    }
+
     #errandText {
-        grid-row: 1 !important;
-        align-self: center !important;
-        grid-column: 4/6 !important;
+        grid-row: 2 !important;
+        align-self: flex-end !important;
+        grid-column: 5/7 !important;
         margin-left: 25px !important;
         font-size: 20px !important;
     }

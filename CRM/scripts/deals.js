@@ -8,6 +8,12 @@ document.addEventListener("DOMContentLoaded", function(e){
 
     console.log(api);
 
+    for(let i = 0; i < api.length; i++){
+        let option = document.createElement("option");
+        option.innerHTML = api[i].companyName;
+        document.getElementById("options").appendChild(option);
+    }
+
     function addBusiness () {
         for(let i = 0; i < api.length; i++){
             let newBusiness = document.createElement("div");
@@ -24,12 +30,6 @@ document.addEventListener("DOMContentLoaded", function(e){
     }
 
     function newBusiness () {
-        for(let i = 0; i < api.length; i++){
-            let option = document.createElement("option");
-            option.innerHTML = api[i].companyName;
-            document.getElementById("options").appendChild(option);
-        }
-
         document.querySelector(".addBusinessContainer").classList.add("visible");
         document.getElementById("headerBar").classList.add("hide");
     }

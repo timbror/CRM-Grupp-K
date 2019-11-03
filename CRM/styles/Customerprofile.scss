@@ -133,12 +133,12 @@
         display: grid;
     } 
     #mail{
-      grid-column: 6/12;
+      grid-column-start: 6/12;
       grid-row: 1;
     }
     #phone{
       clear: both;
-      grid-column: 4/12;
+      grid-column-start: 4/12;
     }
     #customername{
       clear: both;

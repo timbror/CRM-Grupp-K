@@ -150,17 +150,13 @@ textarea {
     display: grid;
   }
   #mail {
-    -ms-grid-column: 6;
-    -ms-grid-column-span: 6;
-    grid-column: 6/12;
+    grid-column-start: 6/12;
     -ms-grid-row: 1;
     grid-row: 1;
   }
   #phone {
     clear: both;
-    -ms-grid-column: 4;
-    -ms-grid-column-span: 8;
-    grid-column: 4/12;
+    grid-column-start: 4/12;
   }
   #customername {
     clear: both;

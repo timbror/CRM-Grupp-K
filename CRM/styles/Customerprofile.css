@@ -61,7 +61,6 @@ img {
   -ms-flex-line-pack: center;
   align-content: center;
 }
-
 #button:hover {
   background-color: white;
   color: black;
@@ -128,7 +127,6 @@ textarea {
   padding-left: 20px;
   padding-top: 10px;
 }
-
 .Business p {
   margin: 0;
   padding-top: 10px;
@@ -146,44 +144,56 @@ textarea {
 
 @media only screen and (min-width: 992px) {
   #body {
-    display: -ms-grid;
     display: grid;
-    -ms-grid-columns: 3;
-        grid-template-columns: 3;
+    grid-template-columns: 3;
   }
+
   #mail {
     margin-bottom: initial;
     margin-top: initial;
     margin-right: initial;
     clear: both;
-    -ms-grid-column: 7;
     grid-column: 7;
-    -ms-grid-row: 1;
     grid-row: 1;
   }
+
+  #mail {
+    margin-bottom: initial;
+    margin-top: initial;
+    margin-right: initial;
+    clear: both;
+    grid-column: 8;
+    grid-row: 1;
+  }
+
+  #contact {
+    margin-bottom: initial;
+    margin-top: initial;
+    margin-right: initial;
+    clear: both;
+    grid-column: 2;
+    grid-row: 1;
+  }
+
   #phone {
     margin-bottom: initial;
     margin-top: initial;
     margin-left: initial;
     clear: both;
     width: 300%;
-    -ms-grid-column: 5;
-    -ms-grid-column-span: 1;
-    grid-column: 5 / 6;
-    -ms-grid-row: 1;
+    grid-column: 6;
     grid-row: 1;
   }
+
   #boxes {
-    -ms-grid-column: 6;
     grid-column: 6;
-    -ms-grid-row: 2;
     grid-row: 2;
   }
 }
-
 @media only screen and (max-width: 500px) {
   #phone, #mail {
     font-size: 70%;
   }
 }
+
 /*# sourceMappingURL=Customerprofile.css.map */

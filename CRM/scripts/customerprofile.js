@@ -1,7 +1,6 @@
-
 async function getCustomers(){
     try{
-        const response = await fetch('https://5db73ad9e2c76f0014a53c6c.mockapi.io/testcompany/1')
+        const response = await fetch('http://5daef40cf2946f001481d046.mockapi.io/user/'+ userId)//value of user id depends on customer
         const json = await response.json();
         appendCustomerInfoToPage(json)
     }catch(e){
@@ -10,19 +9,25 @@ async function getCustomers(){
         content.appendChild(text);
     };
 }
+const urlParams = new URLSearchParams(window.location.search);//used for searching the url
+const userId = urlParams.get('id');// searching after id and asigning it to userID
 
 function appendCustomerInfoToPage(company){
     const customerName = document.getElementById('customername');
-    const customerNameText = document.createTextNode(company.CompanyName);
+    const customerNameText = document.createTextNode(company.companyName);
     customerName.appendChild(customerNameText)
 
     const note = document.getElementById('notesValue');
-    const noteText = document.createTextNode(company.Note)
+    const noteText = document.createTextNode(company.note)
     note.appendChild(noteText)
 
     const phone = document.getElementById('phone');
     const phoneNumber = document.createTextNode(company.number)
     phone.appendChild(phoneNumber)
+
+    const contact = document.getElementById('contact');
+    const customerContact = document.createTextNode(company.contact)
+    contact.appendChild(customerContact)
 
     const email = document.getElementById('mail');
     const emailAddr = document.createTextNode(company.email);
@@ -37,7 +42,7 @@ function appendCustomerInfoToPage(company){
     lastContact.appendChild(lastContactValue);
 
     const nextContact = document.getElementById('nextContact');
-    const nextContactValue = document.createTextNode(new Date(company.FutureEvents).toLocaleDateString());
+    const nextContactValue = document.createTextNode(new Date(company.futureEvents).toLocaleDateString());
     nextContact.appendChild(nextContactValue);
 
     const ongoingEvent = document.getElementById('ongoingEvents');
@@ -51,7 +56,7 @@ async function addNoteToCustomer(id){
     const data = {
         Note: noteText
     };
-    const submitNote = await fetch('http://5db73ad9e2c76f0014a53c6c.mockapi.io/testcompany/' + id, {
+    const submitNote = await fetch('http://5daef40cf2946f001481d046.mockapi.io/user' + id, {
         method: 'PUT',
         headers: {
             'Content-Type': 'application/json'

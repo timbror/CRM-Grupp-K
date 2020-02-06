@@ -1,0 +1,44 @@
+@import "./variables.scss";
+
+* {
+    font-family: Helvetica, Arial, sans-serif;
+}
+
+thead{
+    background: var(--box-bg);
+    height: 90px;
+    text-align: left;
+}
+
+table, td, th{
+    border: 2px solid rgba(8, 0, 0, 0.507);
+    height: 50px;
+    border-collapse: collapse;
+    overflow-y:auto;
+ 
+   
+}
+.table{
+    background-color:rgba(233, 240, 239, 0.397);
+    margin-left:auto; 
+    margin-right:auto;
+    margin-top: 35px;
+    margin-bottom: 55px;
+   
+}
+
+#customers tr:hover {
+    background-color: #ccc;
+}
+#customers th, #customers td {
+    padding: 7px 15px 0px 5px;
+}
+#customers td:hover {
+    cursor: pointer;
+}
+@media only screen and (min-width: 992px) {
+    .container {
+        width: 50%;
+        margin-left: 25%;
+    }
+}

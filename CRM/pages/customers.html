@@ -6,8 +6,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Kunder</title>
-    <link rel="stylesheet" type="text/css" href="../styles/customerlist.css">
+    <link rel="stylesheet" type="text/css" href="../styles/customers.css">
     <link rel="stylesheet" type="text/css" href="../styles/main.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    
 </head>
 
 <body>
@@ -76,65 +78,32 @@
         </a>
     </div>
 
-
-    <section class="container">
-        <button id="massMail">
-            <img src="../images/mail.png">
-        </button>
-
-        <input type="search" class="light-table-filter" data-table="table-info" placeholder="Sök Kund">
+    <div>
+    
+    
         <table class="table-info table">
             <thead>
-                <tr class="tableRowClick">
-                    <th>Namn</th>
-                    <th>Företag</th>
-                    <th>Datum senast kontaktad</th>
-                    <th>Select</th>
+                <tr>
+                    <th>id</th>
+                    <th>Company Name</th>
+                    <th>Contact</th>
+                    <th>Email</th>
+                    <th>Number</th>
                 </tr>
             </thead>
-            
-                <tbody>
-                        
-                    <tr id="tableRowClick">
-                            
-                        <td><a href="Kundprofil.html">Kalle</a></td>
-                    
-                        <td>Mcdonalds</td>
-                        <td>2016-01-02</td>
-                        <td><label><input type="checkbox" /></label></td>
-                    </tr>
-                
-                    <tr>
-                        <td><a href="Kundprofil.html">Lars</a></td>
-                        <td>Swedbank</td>
-                        <td>2018-01-02</td>
-                        <td><label><input type="checkbox" /></label></td>
-                    </tr>
-                    <tr>
-                        <td><a href="Kundprofil.html">Emilia</a></td>
-                        <td>SEB</td>
-                        <td>2019-11-02</td>
-                        <td><label><input type="checkbox" /></label></td>
-                    </tr>
-                    <tr>
-                        <td><a href="Kundprofil.html">Emil</a></td>
-                        <td>Nackademin</td>
-                        <td>2018-11-02</td>
-                        <td><label><input type="checkbox" /></label></td>
-                    </tr>
-                    <tr>
-                        <td><a href="Kundprofil.html">Lara</a></td>
-                        <td>Nordea</td>
-                        <td>2019-03-02</td>
-                        <td><label><input type="checkbox" /></label></td>
-                    </tr>
-                    
-                </tbody>
-            
-        </table>
-    </section>
+            <tbody id="customers">
 
-    <script src="../scripts/customer.js"></script>
+            </tbody>
+        </table>
+
+    </div>
+
+
+
+    <script src="../scripts/customers.js"></script>
+    <script src="../scripts/readjson.js"></script>
+    
+
 </body>
 
 </html>

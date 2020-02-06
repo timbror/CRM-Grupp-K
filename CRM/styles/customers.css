@@ -1,0 +1,60 @@
+html {
+  --bg: #1d201d;
+  --box-bg: linear-gradient(135deg, #11d663, #11d69b);
+  --selected-color: #4b5c4bf5;
+  --border: 1px solid gray;
+  --filter: brightness(90%);
+  --box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
+  --h1: white;
+  --h1dark: rgb(36, 36, 36);
+  --bg-large: rgb(88, 88, 88);
+  --navbar: rgb(59, 59, 59);
+  --nav-border: rgb(29, 29, 29);
+  --dropdown: rgb(117, 117, 117);
+}
+
+* {
+  font-family: Helvetica, Arial, sans-serif;
+}
+
+thead {
+  background: var(--box-bg);
+  height: 90px;
+  text-align: left;
+}
+
+table, td, th {
+  border: 2px solid rgba(8, 0, 0, 0.507);
+  height: 50px;
+  border-collapse: collapse;
+  overflow-y: auto;
+}
+
+.table {
+  background-color: rgba(233, 240, 239, 0.397);
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 35px;
+  margin-bottom: 55px;
+}
+
+#customers tr:hover {
+  background-color: #ccc;
+}
+
+#customers th, #customers td {
+  padding: 7px 15px 0px 5px;
+}
+
+#customers td:hover {
+  cursor: pointer;
+}
+
+@media only screen and (min-width: 992px) {
+  .container {
+    width: 50%;
+    margin-left: 25%;
+  }
+}
+
+/*# sourceMappingURL=customers.css.map */
